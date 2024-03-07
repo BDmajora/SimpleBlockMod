@@ -55,9 +55,6 @@
   + 24 blocks now have slabs to go along with them
 * More Stairs
   + 20 blocks now have stairs to go along with them
-* Steel Door and Steel Trapdoor
-  + Work like iron versions but with full blast resistance
-
 
 ## Items
 + Crafted with 1 milk, 2 sugar, 1 egg, 2 wheat and 1 pumpkin

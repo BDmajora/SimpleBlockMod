@@ -1,10 +1,8 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.block.*;
-import luke.bonusblocks.item.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
-import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.sound.block.BlockSound;
@@ -16,7 +14,6 @@ import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.*;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -316,29 +313,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.BROKEN_BY_FLUIDS)
             .build(new BlockSand("block.sugar", blockID++));
 
-    // Raw Blocks
-    public static final BlockBuilder raw = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    //Raw Iron Block
-    public static final Block blockRawIron = raw
-            .setTextures("rawiron.png")
-            .build(new Block("block.raw.iron", blockID++, Material.metal));
-
-    //Raw Gold Block
-    public static final Block blockRawGold = raw
-            .setTextures("rawgold.png")
-            .build(new Block("block.raw.gold", blockID++, Material.metal));
-
-    //Flint Block
-    public static final Block blockFlint = raw
-            .setTextures("flintblock.png")
-            .setInfiniburn()
-            .build(new Block("block.flint", blockID++, Material.stone));
-
     //Crude Steel Block
     public static final Block blockCrudeSteel = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -357,62 +331,12 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU);
 
-    public static final Block overlayRawIron = pebble
-            .setTextures("ironpebble1.png")
-            .setTextures("ironpebble2.png")
-            .setTextures("ironpebble3.png")
-            .build(new BlockOverlayRawIron("overlay.iron", blockID++, Material.metal));
-    public static final Block overlayRawGold = pebble
-            .setTextures("goldpebble1.png")
-            .setTextures("goldpebble2.png")
-            .setTextures("goldpebble3.png")
-            .build(new BlockOverlayRawGold("overlay.gold", blockID++, Material.metal));
-
     // Ores
     private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(3.0f)
             .setResistance(5.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block trapdoorSteel = raw
-            .setBlockModel(new BlockModelRenderBlocks(30))
-            .setResistance(2000.0f)
-            .setTopBottomTexture("steeltrapdoortop.png")
-            .setSideTextures("steeltrapdoorside.png")
-            .setVisualUpdateOnMetadata()
-            .build(new BlockTrapDoor("trapdoor.steel", blockID++, Material.metal, false));
-
-    public static final Block doorSteelBottom = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setResistance(2000.0f)
-            .setTextures("steeldoorbottom.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockDoor("door.steel.bottom", blockID++, Material.metal, false) {
-        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-            if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                return new ItemStack[]{new ItemStack(doorSteel)};
-            }
-            return null;
-        }
-            });
-
-    public static final Block doorSteelTop = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setResistance(2000.0f)
-            .setTextures("steeldoortop.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockDoor("door.steel.top", blockID++, Material.metal, true) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorSteel)};
-                    }
-                    return null;
-                }
-            });
-
 
     // Scorched Stone
     public static final Block scorchedstone = new BlockBuilder(MOD_ID)
@@ -564,12 +488,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setResistance(20.0f)
             .setTextures("soulslate.png")
             .build(new Block("soulslate", blockID++, Material.stone));
-
-    // Items
-
-
-    public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
 
     //Slabs
     public static final BlockBuilder slab = new BlockBuilder(MOD_ID)
@@ -741,25 +659,17 @@ public static final Block slabPermafrostPolished = slab
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
 
-        Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
-        Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
-
         stoneToMossMap.put(BonusBlocks.cobblednetherrack, Block.netherrack);
 
-        ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
 
 
-        ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
         ItemToolPickaxe.miningLevels.put(slabBrickGold, 2);
         ItemToolPickaxe.miningLevels.put(stairsBrickGold, 2);
         ItemToolPickaxe.miningLevels.put(brickSteel, 2);
         ItemToolPickaxe.miningLevels.put(slabBrickSteel, 2);
         ItemToolPickaxe.miningLevels.put(stairsBrickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(trapdoorSteel, 2);
-        ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
-        ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
 
 
@@ -806,18 +716,12 @@ public static final Block slabPermafrostPolished = slab
         templateItemtoBlock.addInput('X', Item.sulphur).create("block_of_sulphur", new ItemStack(BonusBlocks.blockSulphur, 1));
         templateItemtoBlock.addInput('X', Item.dustSugar).create("block_of_sugar", new ItemStack(BonusBlocks.blockSugar, 1));
         templateItemtoBlock.addInput('X', Item.ingotSteelCrude).create("block_of_crude_steel", new ItemStack(BonusBlocks.blockCrudeSteel, 1));
-        templateItemtoBlock.addInput('X', Item.flint).create("block_of_flint", new ItemStack(BonusBlocks.blockFlint, 1));
-        templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
-        templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
         templateBlocktoItem.addInput('X', BonusBlocks.blockBone).create("block_of_bone_to_bone", new ItemStack(Item.bone, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSulphur).create("block_of_sulphur_to_sulphur", new ItemStack(Item.sulphur, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSugar).create("block_of_sugar_to_sugar", new ItemStack(Item.dustSugar, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCrudeSteel).create("block_of_crude_steel_to_crude_steel", new ItemStack(Item.ingotSteelCrude, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint_to_flint", new ItemStack(Item.flint, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold_to_raw_gold", new ItemStack(Item.oreRawGold, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron_to_raw_iron", new ItemStack(Item.oreRawIron, 9));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.flowerCyan).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));

@@ -114,11 +114,6 @@ tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
 tile.mesh.name=Iron Mesh Block
 tile.workbench.name=Crafting Table
 
-tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
-tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
-tile.bonusblocks.block.raw.gold.name=Block of Raw Gold
-tile.bonusblocks.block.raw.gold.desc=A solid block of raw gold, for flaunting your bling.
-
 tile.netherrack.name=Mossy Cobbled Netherrack
 tile.netherrack.desc=Cobbled Netherrack with added red greenery.
 tile.bonusblocks.netherrack.name=Netherrack
@@ -132,11 +127,6 @@ tile.bonusblocks.door.steel.top.name=Top Steel Door
 tile.bonusblocks.door.steel.top.desc=I’m a big fan of steel. It really gets my metal going.
 tile.bonusblocks.door.steel.bottom.name=Bottom Steel Door
 tile.bonusblocks.door.steel.bottom.desc=God that joke was horrible...
-
-tile.bonusblocks.overlay.gold.name=Gold Nuggets
-tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.
-tile.bonusblocks.overlay.iron.name=Iron Nuggets
-tile.bonusblocks.overlay.iron.desc=A cluster of raw iron.
 
 tile.bonusblocks.block.bone.name=Block of Bones
 tile.bonusblocks.block.bone.desc=Fossilized remains of the past. Spooky...
