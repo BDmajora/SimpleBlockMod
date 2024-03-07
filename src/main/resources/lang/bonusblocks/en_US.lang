@@ -223,8 +223,6 @@ tile.bonusblocks.overlay.iron.desc=A cluster of raw iron.
 tile.bonusblocks.overlay.copper.name=Copper Nuggets
 tile.bonusblocks.overlay.copper.desc=A cluster of raw copper.
 
-tile.bonusblocks.block.cloth.name=Block of Cloth
-tile.bonusblocks.block.cloth.desc=Soft and bouncy cloth stretched into a block.
 tile.bonusblocks.block.bone.name=Block of Bones
 tile.bonusblocks.block.bone.desc=Fossilized remains of the past. Spooky...
 tile.bonusblocks.block.sulphur.name=Block of Sulphur

@@ -298,16 +298,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockAxisAligned("block.bone", blockID++, Material.stone));
 
-    // Cloth Block
-    public static final Block blockCloth = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
-            .setHardness(0.8f)
-            .setResistance(0.8f)
-            .setTextures("clothblock.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_SHEARS)
-            .build(new BlockCloth("block.cloth", blockID++, Material.cloth));
-
     // Sulphur Block
     public static final Block blockSulphur = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
@@ -325,26 +315,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("sugarblock.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.BROKEN_BY_FLUIDS)
             .build(new BlockSand("block.sugar", blockID++));
-
-    // Leather Block
-    public static final Block blockLeather = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.6f))
-            .setHardness(0.8f)
-            .setResistance(0.8f)
-            .setTextures("leatherblock.png")
-            .setFlammability(5, 10)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.leather", blockID++, Material.cloth));
-
-    // Wicker Block
-    public static final Block blockWicker = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setHardness(0.5f)
-            .setResistance(0.5f)
-            .setTextures(4, 9)
-            .setFlammability(60, 120)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.wicker", blockID++, Material.cloth));
 
     // Raw Blocks
     public static final BlockBuilder raw = new BlockBuilder(MOD_ID)
@@ -1270,35 +1240,26 @@ public static final Block slabPermafrostPolished = slab
         templateItemtoBlock.addInput('X', Item.bone).create("block_of_bone", new ItemStack(BonusBlocks.blockBone, 1));
         templateItemtoBlock.addInput('X', Item.sulphur).create("block_of_sulphur", new ItemStack(BonusBlocks.blockSulphur, 1));
         templateItemtoBlock.addInput('X', Item.dustSugar).create("block_of_sugar", new ItemStack(BonusBlocks.blockSugar, 1));
-        templateItemtoBlock.addInput('X', Item.cloth).create("block_of_cloth", new ItemStack(BonusBlocks.blockCloth, 1));
         templateItemtoBlock.addInput('X', Item.ingotSteelCrude).create("block_of_crude_steel", new ItemStack(BonusBlocks.blockCrudeSteel, 1));
         templateItemtoBlock.addInput('X', Item.flint).create("block_of_flint", new ItemStack(BonusBlocks.blockFlint, 1));
         templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
         templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
         templateItemtoBlock.addInput('X', BonusBlocks.oreRawCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockRawCopper, 1));
-        templateItemtoBlock.addInput('X', Item.leather).create("block_of_leather", new ItemStack(BonusBlocks.blockLeather, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
         templateBlocktoItem.addInput('X', BonusBlocks.blockBone).create("block_of_bone_to_bone", new ItemStack(Item.bone, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSulphur).create("block_of_sulphur_to_sulphur", new ItemStack(Item.sulphur, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSugar).create("block_of_sugar_to_sugar", new ItemStack(Item.dustSugar, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockCloth).create("block_of_cloth_to_cloth", new ItemStack(Item.cloth, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCrudeSteel).create("block_of_crude_steel_to_crude_steel", new ItemStack(Item.ingotSteelCrude, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint_to_flint", new ItemStack(Item.flint, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold_to_raw_gold", new ItemStack(Item.oreRawGold, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron_to_raw_iron", new ItemStack(Item.oreRawIron, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawCopper).create("block_of_raw_copper_to_raw_copper", new ItemStack(BonusBlocks.oreRawCopper, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather_to_leather", new ItemStack(Item.leather, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusBlocks.ingotCopper, 4));
 
         RecipeBuilder.Shaped(MOD_ID, "CCC", "C C", "CCC")
                 .addInput('C', BonusBlocks.ingotCopper)
                 .create("copper_mesh", new ItemStack(BonusBlocks.meshCopper, 8));
-
-        RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
-                .addInput('W', Item.wheat)
-                .addInput('S', Item.leather)
-                .create("block_of_wicker", new ItemStack(BonusBlocks.blockWicker, 4));
 
         RecipeBuilder.Shaped(MOD_ID, "CIC")
                 .addInput('C', BonusBlocks.blockCopper)
