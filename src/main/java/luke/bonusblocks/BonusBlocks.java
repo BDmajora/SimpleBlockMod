@@ -85,9 +85,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Block box = boxes
             .setTextures(9, 1)
             .build(new Block("box", blockID++, Material.wood));
-    public static final Block boxPainted = boxes
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockPaintedBox("box.painted", blockID++));
 
     // Bookshelf
     public static final Block bookshelfEmptyPlanksOak = new BlockBuilder(MOD_ID)
@@ -1385,9 +1382,6 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
 
 
-        Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
-
-
         LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logJacaranda.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logScorched.id, 300);
@@ -1405,7 +1399,6 @@ public static final Block slabPermafrostPolished = slab
         LookupFuelFurnace.instance.addFuelEntry(barkShrub.id, 300);
 */
         LookupFuelFurnace.instance.addFuelEntry(box.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(boxPainted.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(crate.id, 300);
 //        LookupFuelFurnace.instance.addFuelEntry(crateSticky.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
@@ -1437,27 +1430,7 @@ public static final Block slabPermafrostPolished = slab
         templateLogtoBark.addInput('X', BonusBlocks.logScorched).create("barkScorched", new ItemStack(BonusBlocks.barkScorched, 4));
         templateLogtoBark.addInput('X', BonusBlocks.logShrub).create("barkShrub", new ItemStack(BonusBlocks.barkShrub, 4));
         templateLogtoBark.addInput('X', BonusBlocks.logCacao).create("logCacao", new ItemStack(BonusBlocks.barkCacao, 4));
-
-        RecipeBuilderShaped templateBarktoPlank = new RecipeBuilderShaped(MOD_ID, "X");
-        templateBarktoPlank.addInput('X', BonusBlocks.barkOak).create("barkOaktoPlanks", new ItemStack(Block.planksOak, 4));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkOakMossy).create("barkOakMossytoPlanks", new ItemStack(Block.planksOakPainted, 4, 13));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkBirch).create("barkBirchtoPlanks", new ItemStack(Block.planksOakPainted, 4, 0));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkPine).create("barkPinetoPlanks", new ItemStack(Block.planksOakPainted, 4, 12));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkCherry).create("barkCherrytoPlanks", new ItemStack(Block.planksOakPainted, 4, 6));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkEucalyptus).create("barkEucalyptustoPlanks", new ItemStack(Block.planksOakPainted, 4, 1));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkMaple).create("barkMapletoPlanks", new ItemStack(Block.planksOakPainted, 4, 14));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkJacaranda).create("barkJacarandatoPlanks", new ItemStack(Block.planksOakPainted, 4, 10));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkScorched).create("barkScorchedtoPlanks", new ItemStack(Block.planksOakPainted, 4, 15));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkShrub).create("barkShrubtoPlanks", new ItemStack(Block.planksOakPainted, 4, 8));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkCacao).create("barkCacaotoPlanks", new ItemStack(Block.planksOakPainted, 4, 5));
 */
-
-        RecipeBuilderShaped templateLogtoPlank = new RecipeBuilderShaped(MOD_ID, "X");
-        templateLogtoPlank.addInput('X', BonusBlocks.logMaple).create("logMapletoPlanks", new ItemStack(Block.planksOakPainted, 4, 14));
-        templateLogtoPlank.addInput('X', BonusBlocks.logJacaranda).create("logJacarandatoPlanks", new ItemStack(Block.planksOakPainted, 4, 10));
-        templateLogtoPlank.addInput('X', BonusBlocks.logScorched).create("logScorchedtoPlanks", new ItemStack(Block.planksOakPainted, 4, 15));
-        templateLogtoPlank.addInput('X', BonusBlocks.logShrub).create("logShrubtoPlanks", new ItemStack(Block.planksOakPainted, 4, 8));
-        templateLogtoPlank.addInput('X', BonusBlocks.logCacao).create("logCacaotoPlanks", new ItemStack(Block.planksOakPainted, 4, 5));
 
         RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
         templateItemtoBlock.addInput('X', Item.bone).create("block_of_bone", new ItemStack(BonusBlocks.blockBone, 1));
@@ -1626,26 +1599,6 @@ public static final Block slabPermafrostPolished = slab
 //                BonusBlocks.barkScorched,
 //                BonusBlocks.barkShrub));
 
-
-        Registries.ITEM_GROUPS.register("bonusblocks:copper_ores", Registries.stackListOf(oreCopperStone, oreCopperBasalt, oreCopperGranite, oreCopperLimestone));
-
-                Registries.ITEM_GROUPS.register("bonusblocks:box", Registries.stackListOf(BonusBlocks.box, new ItemStack(BonusBlocks.boxPainted, 1, 0),
-                new ItemStack(BonusBlocks.boxPainted, 1, 1),
-                new ItemStack(BonusBlocks.boxPainted, 1, 2),
-                new ItemStack(BonusBlocks.boxPainted, 1, 3),
-                new ItemStack(BonusBlocks.boxPainted, 1, 4),
-                new ItemStack(BonusBlocks.boxPainted, 1, 5),
-                new ItemStack(BonusBlocks.boxPainted, 1, 6),
-                new ItemStack(BonusBlocks.boxPainted, 1, 7),
-                new ItemStack(BonusBlocks.boxPainted, 1, 8),
-                new ItemStack(BonusBlocks.boxPainted, 1, 9),
-                new ItemStack(BonusBlocks.boxPainted, 1, 10),
-                new ItemStack(BonusBlocks.boxPainted, 1, 11),
-                new ItemStack(BonusBlocks.boxPainted, 1, 12),
-                new ItemStack(BonusBlocks.boxPainted, 1, 13),
-                new ItemStack(BonusBlocks.boxPainted, 1, 14),
-                new ItemStack(BonusBlocks.boxPainted, 1, 15)));
-
         Registries.ITEM_GROUPS.register("bonusblocks:wool_slab", Registries.stackListOf(new ItemStack(BonusBlocks.slabWool, 1, 0),
                 new ItemStack(BonusBlocks.slabWool, 1, 16),
                 new ItemStack(BonusBlocks.slabWool, 1, 32),
@@ -1679,17 +1632,6 @@ public static final Block slabPermafrostPolished = slab
                 new ItemStack(BonusBlocks.stairsWool, 1, 208),
                 new ItemStack(BonusBlocks.stairsWool, 1, 224),
                 new ItemStack(BonusBlocks.stairsWool, 1, 240)));
-
-        for (int color = 0; color < 16; color++) {
-            RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:box")
-                    .addInput(new ItemStack(Item.dye, 1, 15 - color))
-                    .create("painted_box_dye", new ItemStack(BonusBlocks.boxPainted, 1, color));
-
-            RecipeBuilder.Shaped(MOD_ID, "CC", "CC")
-                    .addInput('C', new ItemStack(Block.chestPlanksOakPainted, 1, color << 4))
-                    .create("painted_box", new ItemStack(BonusBlocks.boxPainted, 8, color));
-        }
 
         for (int color = 0; color < 16; color++) {
             RecipeBuilder.Shapeless(MOD_ID)

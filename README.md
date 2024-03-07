@@ -5,8 +5,6 @@
 ## Blocks
 * Crate
   + Crafted with 9 planks
-* Box and Painted Box
-  + Crafted with 4 chests or painted chests, gives 8 boxes
 * Empty Bookshelf
   + Crafted like a bookshelf but without the books
 * Branches
