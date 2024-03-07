@@ -903,21 +903,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("bakedclay.png")
             .build(new Block("clay.baked", blockID++, Material.stone));
 
-    // Obsidian Glass
-    public static final BlockBuilder obsidian = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-            .setHardness(5.0f)
-            .setResistance(1000.0f)
-            .setTextures("obsidianglass.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block glassObsidian = obsidian
-            .build(new BlockGlassObsidian("glass.obsidian", blockID++, Material.glass, true));
-    public static final Block trapdoorGlassObsidian = obsidian
-            .setBlockModel(new BlockModelRenderBlocks(30))
-            .setVisualUpdateOnMetadata()
-            .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID++));
-
     // Quartz Glass
     public static final Block glassQuartz = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
@@ -1409,14 +1394,6 @@ public static final Block slabPermafrostPolished = slab
     }
 
     public void onRecipesReady() {
-//        RecipeBuilderShaped templateReinforced = new RecipeBuilderShaped(MOD_ID, "XXX", "XOX", "XXX");
-//        templateReinforced.addInput('X', Block.cobbleStone).addInput('O', Block.obsidian).create("reinforcedCobbledStone", new ItemStack(BonusBlocks.cobbleStoneReinforced, 8));
-//        templateReinforced.addInput('X', Block.cobbleStoneMossy).addInput('O', Block.obsidian).create("reinforcedCobbledStoneMossy", new ItemStack(BonusBlocks.cobbleStoneMossyReinforced, 8));
-//        templateReinforced.addInput('X', Block.cobbleBasalt).addInput('O', Block.obsidian).create("reinforcedCobbledBasalt", new ItemStack(BonusBlocks.cobbleBasaltReinforced, 8));
-//        templateReinforced.addInput('X', Block.cobbleGranite).addInput('O', Block.obsidian).create("reinforcedCobbledGranite", new ItemStack(BonusBlocks.cobbleGraniteReinforced, 8));
-//        templateReinforced.addInput('X', Block.cobbleLimestone).addInput('O', Block.obsidian).create("reinforcedCobbledLimestone", new ItemStack(BonusBlocks.cobbleLimestoneReinforced, 8));
-//        templateReinforced.addInput('X', Block.cobblePermafrost).addInput('O', Block.obsidian).create("reinforcedCobbledPermafrost", new ItemStack(BonusBlocks.cobblePermafrostReinforced, 8));
-
 /*
         RecipeBuilderShaped templateLogtoBark = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
         templateLogtoBark.addInput('X', Block.logOak).create("barkOak", new ItemStack(BonusBlocks.barkOak, 4));
@@ -1465,10 +1442,6 @@ public static final Block slabPermafrostPolished = slab
                 .addInput('W', Item.wheat)
                 .addInput('S', Item.leather)
                 .create("block_of_wicker", new ItemStack(BonusBlocks.blockWicker, 4));
-
-        RecipeBuilder.Shaped(MOD_ID, "GGG", "GGG")
-                .addInput('G', BonusBlocks.glassObsidian)
-                .create("glass_obsidian_trapdoor", new ItemStack(BonusBlocks.trapdoorGlassObsidian, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "GQ", "QG")
                 .addInput('G', Block.glass)
@@ -1786,10 +1759,6 @@ public static final Block slabPermafrostPolished = slab
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.netherrack)
                 .create("mossy_netherrack_to_cobbled_netherrack", BonusBlocks.cobblednetherrack.getDefaultStack());
-
-        RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(Block.obsidian)
-                .create("obsidian_glass", BonusBlocks.glassObsidian.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.cobbleStone)

@@ -77,8 +77,6 @@
   + Crafted in the same way as other carved stone blocks
 * Baked Clay
   + Made from smelting a clay block
-* Obsidian Glass
-  + Explosion proof, trapdoor variant
 * Quartz Glass
   + Reflects light that goes through
   + Crafted with 2 glass and 2 quartz
@@ -95,10 +93,6 @@
 * Soul Slate
   + Generates in the bottom half of the nether
   + Crafted from 4 soulsand
-* Brimstone
-  + Generates at the very bottom of the nether
-  + Extremely hard to mine, like old obsidian
-  + Crafted by blast smelting netherrack
 * More Slabs
   + 24 blocks now have slabs to go along with them
 * More Stairs
