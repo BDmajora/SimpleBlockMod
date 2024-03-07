@@ -928,23 +928,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setInfiniburn()
             .build(new BlockBrimstone("brimstone", blockID++, Material.piston));
 
-/*
-    public static final Block bedroll = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setBlockModel(new BlockModelRenderBlocks(14))
-            .setHardness(0.2f)
-            .setResistance(0.2f)
-            .setTextures("bedrollfront.png")
-            .setTextures("bedrolltop2.png")
-            .setTextures("bedrolltop1.png")
-            .setTextures("bedrollside1.png")
-            .setTextures("bedrollside2.png")
-            .setTextures("bedrollback.png")
-            .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockBedroll("bedroll", blockID++));
-*/
-
     // Items
     public static Item oreRawCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemRawCopper("ore.raw.copper", itemID++), "rawcopper.png");
@@ -963,9 +946,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
     public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
-
-//    public static Item bedrollItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
-//            new ItemBedroll("bedroll", itemID++), "bedroll.png").setMaxStackSize(1);
 
     //Slabs
     public static final BlockBuilder slab = new BlockBuilder(MOD_ID)
@@ -1403,10 +1383,6 @@ public static final Block slabPermafrostPolished = slab
                 .addInput(new ItemStack(Item.dye, 1, 2))
                 .addInput(new ItemStack(Item.dye, 1, 11))
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Item.dye, 2, 10));
-
-//        RecipeBuilder.Shaped(MOD_ID, "WWW")
-//                .addInput('W', (Item.cloth))
-//                .create("sleepingbag", new ItemStack(BonusBlocks.bedrollItem, 1));
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
         templatePillar.addInput('X', Block.marble).create("marble_pillar", new ItemStack(Block.pillarMarble, 3));

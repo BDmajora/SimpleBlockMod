@@ -356,11 +356,6 @@ tile.bonusblocks.stairs.block.copper.tarnished.desc=Tarnished copper block used 
 tile.bonusblocks.stairs.block.copper.corroded.name=Corroded Copper Stairs
 tile.bonusblocks.stairs.block.copper.corroded.desc=Corroded copper block used for rapid vertical movement.
 
-item.bonusblocks.bedroll.name=Sleeping Bag
-item.bonusblocks.bedroll.desc=Take a quick nap overnight that wont change your spawn-point.
-tile.bonusblocks.bedroll.name=Sleeping Bag
-tile.bonusblocks.bedroll.desc=Sleeping bag!
-
 tile.lamp.idle.silver.name=Silver Lamp
 tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
 item.dye.silver.name=Silver Dye
