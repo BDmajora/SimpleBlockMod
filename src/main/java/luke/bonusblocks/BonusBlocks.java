@@ -1031,18 +1031,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockPumice("pumice.wet", blockID++, true));
 
-
-    // Pumpkin Pie
-    public static final Block pie = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setHardness(0.5f)
-            .setResistance(0.5f)
-            .setTopTexture("pietop.png")
-            .setBottomTexture("piebottom.png")
-            .setSideTextures("pieside.png")
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockPie("pie", blockID++));
-
 /*
     public static final Block bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
@@ -1081,9 +1069,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 //    public static Item bedrollItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
 //            new ItemBedroll("bedroll", itemID++), "bedroll.png").setMaxStackSize(1);
-
-    public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
 
     //Slabs
     public static final BlockBuilder slab = new BlockBuilder(MOD_ID)
@@ -1828,14 +1813,6 @@ public static final Block slabPermafrostPolished = slab
         templateStairs.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_stairs", new ItemStack(BonusBlocks.stairsMossyCobbledNetherrack, 6));
         templateStairs.addInput('X', BonusBlocks.cobblednetherrack).create("cobblestone_netherrack_stairs", new ItemStack(BonusBlocks.stairsCobbledNetherrack, 6));
         templateStairs.addInput('X', BonusBlocks.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 6));
-
-        RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")
-                .addInput('M', (Item.bucketMilk))
-                .addInput('W', (Item.wheat))
-                .addInput('S', (Item.dustSugar))
-                .addInput('E', (Item.eggChicken))
-                .addInput('P', (Block.pumpkin))
-                .create("pumpkin_pie", new ItemStack(BonusBlocks.foodPie, 1));
 
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
                 .addInput('P', BonusBlocks.ingotCopper)

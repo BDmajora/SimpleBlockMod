@@ -416,12 +416,6 @@ tile.bonusblocks.stairs.block.copper.tarnished.desc=Tarnished copper block used 
 tile.bonusblocks.stairs.block.copper.corroded.name=Corroded Copper Stairs
 tile.bonusblocks.stairs.block.copper.corroded.desc=Corroded copper block used for rapid vertical movement.
 
-tile.bonusblocks.pie.name=Pumpkin Pie
-tile.bonusblocks.pie.desc=I just want to pie already.
-
-item.bonusblocks.food.pie.name=Pumpkin Pie
-item.bonusblocks.food.pie.desc=Pumpkin spiced custard filled dessert.
-
 item.bonusblocks.bedroll.name=Sleeping Bag
 item.bonusblocks.bedroll.desc=Take a quick nap overnight that wont change your spawn-point.
 tile.bonusblocks.bedroll.name=Sleeping Bag

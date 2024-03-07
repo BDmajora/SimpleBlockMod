@@ -109,8 +109,6 @@
   + 24 blocks now have slabs to go along with them
 * More Stairs
   + 20 blocks now have stairs to go along with them
-* Pumpkin Pie
-  + Acts like a cake with only 4 slices
 * Steel Door and Steel Trapdoor
   + Work like iron versions but with full blast resistance
 * Nuggets
@@ -120,7 +118,6 @@
 ## Items
 * Raw Copper and Copper Ingot
 * Copper Doors and Steel Door
-* Pumpkin Pie
 + Crafted with 1 milk, 2 sugar, 1 egg, 2 wheat and 1 pumpkin
 
 
