@@ -25,11 +25,6 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.oreCopperStone, 12, 24, 0.0f, 1.0f, true);
 
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, 2);
-        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MAPLE, 2);
-
-        overworldConfig.addTreeDensity(ModBiomes.OVERWORLD_MAPLE, 2);
-
-        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_MAPLE, 1);
         overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, 1);
 
 
@@ -71,7 +66,6 @@ public class TerrainApiPlugin implements TerrainAPI {
 
 
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, Block.tallgrassFern);
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OUTBACK_MESA, Block.deadbush);
 
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.cobblednetherrack, 32, 16, 0.0f, 1.0f, false);
@@ -98,7 +92,7 @@ public class TerrainApiPlugin implements TerrainAPI {
                 new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_PLAINS, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerCyan.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, ModBiomes.OVERWORLD_MAPLE, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerPink.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_DESERT, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
