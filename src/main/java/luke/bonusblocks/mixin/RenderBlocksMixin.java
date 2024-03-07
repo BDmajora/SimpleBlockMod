@@ -1,7 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocksMod;
-import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.client.render.RenderBlockCache;
 import net.minecraft.client.render.RenderBlocks;
 import net.minecraft.client.render.Tessellator;

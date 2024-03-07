@@ -1,7 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocksMod;
-import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.BiomeShrubland;
 import net.minecraft.core.world.generate.feature.WorldFeature;

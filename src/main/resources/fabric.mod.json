@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "bonusblocks",
-  "version": "2.1.0",
+  "version": "2.0.0",
 
   "name": "Bonus Blocks",
   "description": "Adds in a plethora of new and useful blocks",
@@ -18,17 +18,12 @@
 
   "environment": "*",
   "entrypoints": {
+    "recipesReady": [
+      "luke.bonusblocks.BonusRecipesRegister",
+      "luke.bonusblocks.BonusBlocks"
+    ],
     "main": [
-      "luke.bonusblocks.BonusBlocksMod"
-    ],
-    "beforeGameStart" : [
-      "luke.bonusblocks.BonusBlocksMod"
-    ],
-    "beforeClientStart" : [
-      "luke.bonusblocks.BonusBlocksMod"
-    ],
-    "afterGameStart" : [
-      "luke.bonusblocks.BonusBlocksMod"
+      "luke.bonusblocks.BonusBlocks"
     ],
     "terrain-api": [
       "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
@@ -39,9 +34,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3",
-    "terrain-api": ">=1.4.2-7.1",
-    "dragonfly": ">=1.4.4-7.1"
+    "fabricloader": ">=0.13.3"
   },
   "suggests": {
   }

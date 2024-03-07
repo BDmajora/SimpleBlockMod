@@ -1,7 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import com.mojang.nbt.CompoundTag;
-import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.IPaintingExtras;
 import luke.bonusblocks.ServerManager;
 import net.minecraft.core.entity.Entity;
@@ -28,24 +28,16 @@ public abstract class EntityPaintingMixin extends Entity implements IPaintingExt
         entityData.define(1, -1);
         entityData.define(2, -1);
     }
-    @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/world/World;entityJoinedWorld(Lnet/minecraft/core/entity/Entity;)Z", shift = At.Shift.AFTER))
-    private void dropFrameMaterialTick(CallbackInfo ci){
-        if (bonusblocks$getStack() != null){
-            this.world.entityJoinedWorld(new EntityItem(this.world, this.x, this.y, this.z, bonusblocks$getStack()));
-        }
-    }
     @Inject(method = "hurt(Lnet/minecraft/core/entity/Entity;ILnet/minecraft/core/util/helper/DamageType;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/world/World;entityJoinedWorld(Lnet/minecraft/core/entity/Entity;)Z", shift = At.Shift.AFTER))
     private void dropFrameMaterial(Entity entity, int i, DamageType type, CallbackInfoReturnable<Boolean> cir){
-        if (bonusblocks$getStack() != null){
-            this.world.entityJoinedWorld(new EntityItem(this.world, this.x, this.y, this.z, bonusblocks$getStack()));
-        }
+        this.world.entityJoinedWorld(new EntityItem(this.world, this.x, this.y, this.z, bonusblocks$getStack()));
     }
     @Override
     public boolean interact(EntityPlayer entityplayer) {
         if (entityplayer.getHeldItem() != null){
             ItemStack stack = entityplayer.getHeldItem();
             ItemStack paintingStack = bonusblocks$getStack();
-            if (BonusBlocksMod.getBorder(stack) == null) return false;
+            if (BonusBlocks.getBorder(stack) == null) return false;
             setStack(new ItemStack(stack.getItem(), 1, stack.getMetadata()));
             stack.consumeItem(entityplayer);
             if (stack.stackSize <= 0) {

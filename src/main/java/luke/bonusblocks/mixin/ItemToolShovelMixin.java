@@ -1,7 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocksMod;
-import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -24,8 +23,8 @@ public class ItemToolShovelMixin {
     public void addNewPathBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir){
         int i1 = world.getBlockId(blockX,blockY,blockZ);
         int j1 = world.getBlockId(blockX,blockY + 1,blockZ);
-        if (side != Side.BOTTOM && j1 == 0 && (i1 == BonusBlocks.overgrownGrass.id || i1 == BonusBlocks.overgrownGrassRetro.id)) {
-            Block pathBlock = BonusBlocks.overgrownPath;
+        if (side != Side.BOTTOM && j1 == 0 && (i1 == BonusBlocks.grassOvergrown.id || i1 == BonusBlocks.grassRetroOvergrown.id)) {
+            Block pathBlock = BonusBlocks.pathOvergrown;
             world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, pathBlock, EnumBlockSoundEffectType.PLACE);
             if (!world.isClientSide) {
                 world.setBlockWithNotify(blockX, blockY, blockZ, pathBlock.id);

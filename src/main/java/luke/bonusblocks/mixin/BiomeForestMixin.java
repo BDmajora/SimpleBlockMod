@@ -1,12 +1,11 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.BiomeForest;
+import net.minecraft.core.world.biome.BiomeRainforest;
 import net.minecraft.core.world.generate.feature.WorldFeature;
-import net.minecraft.core.world.generate.feature.tree.WorldFeatureTree;
-import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeCherry;
-import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
+import net.minecraft.core.world.generate.feature.tree.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

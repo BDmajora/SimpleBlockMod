@@ -1,10 +1,9 @@
 package luke.bonusblocks.ModContainer.TerrainApi;
 
+import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.biomes.ModBiomes;
 import luke.bonusblocks.biomes.WorldFeaturePebbles;
 import luke.bonusblocks.biomes.WorldFeaturePumice;
-import luke.bonusblocks.biomes.WorldFeatureSkull;
-import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -15,25 +14,15 @@ import useless.terrainapi.generation.nether.api.ChunkDecoratorNetherAPI;
 import useless.terrainapi.generation.overworld.OverworldConfig;
 import useless.terrainapi.generation.overworld.api.ChunkDecoratorOverworldAPI;
 
-import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-
 public class TerrainApiPlugin implements TerrainAPI {
     @Override
     public String getModID() {
-        return MOD_ID;
+        return BonusBlocks.MOD_ID;
     }
     public static final OverworldConfig overworldConfig = ChunkDecoratorOverworldAPI.overworldConfig;
     @Override
     public void onInitialize() {
-//        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), Block.limestone, 32, 15, 0.125f, false);
-//        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), Block.granite, 32, 15, 0.125f, false);
-
-        overworldConfig.setOreValues(getModID(), Block.mossStone, 0, 0, 0);
-
         ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.oreCopperStone, 12, 24, 0.0f, 1.0f, true);
-        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.oreSilverStone, 6, 12, 0.0f, 0.5f, true);
-
-        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.moss, 32, 1, 0.5F, false);
 
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, 2);
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_DRYLAND, 2);
@@ -89,15 +78,12 @@ public class TerrainApiPlugin implements TerrainAPI {
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OUTBACK_MESA, Block.deadbush);
 
-        ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.cobbleNetherrack, 24, 12, 0.0f, 1.0f, false);
-        ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.netherrack, 48, 6, 0.0f, 1.0f, false);
+        ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.cobblednetherrack, 32, 16, 0.0f, 1.0f, false);
+        ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.netherrack, 64, 8, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Block.slate, 32, 4, 0.75f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.brimstone, 32, 2, 0.0f, 0.25f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.soulslate, 32, 4, 0.0f, 0.50f, false);
         ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f,  4,
-                new Biome[]{Biomes.NETHER_NETHER});
-
-        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f,  1,
                 new Biome[]{Biomes.NETHER_NETHER});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.spinifex.id), 4, -1f, 1,
@@ -142,8 +128,7 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.flowerLime.id), 4);
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.mushroomGray.id), 6, 1.0f);
-
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.mushroomGray.id), 6);
 
     }
 }

@@ -1,7 +1,6 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocksMod;
-import luke.bonusblocks.item.BonusItems;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -20,7 +19,7 @@ public class BlockPie extends Block {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return dropCause != EnumDropCause.PICK_BLOCK && meta != 0 ? null : new ItemStack[]{new ItemStack(BonusItems.foodPie)};
+        return dropCause != EnumDropCause.PICK_BLOCK && meta != 0 ? null : new ItemStack[]{new ItemStack(BonusBlocks.foodPie)};
     }
 
     public void setBlockBoundsBasedOnState(World world, int x, int y, int z) {
@@ -54,7 +53,7 @@ public class BlockPie extends Block {
     }
 
     public int getBlockTextureFromSideAndMetadata(Side side, int j) {
-        int[] texture = TextureHelper.getOrCreateBlockTexture(BonusBlocksMod.MOD_ID, "pieinside.png");
+        int[] texture = TextureHelper.getOrCreateBlockTexture(BonusBlocks.MOD_ID, "pieinside.png");
         return j > 0 && side == Side.WEST ? texCoordToIndex(texture[0], texture[1]) : this.atlasIndices[side.getId()];
     }
 
