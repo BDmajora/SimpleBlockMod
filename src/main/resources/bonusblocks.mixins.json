@@ -14,7 +14,6 @@
     "EntityPaintingMixin",
     "EntityTrackerAccessor",
     "ItemDyeMixin",
-    "ItemToolAxeMixin",
     "ItemToolShovelMixin",
     "NetClientHandlerMixin",
     "PaintingPacketMixin",

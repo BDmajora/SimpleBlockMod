@@ -333,43 +333,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("rawgold.png")
             .build(new Block("block.raw.gold", blockID++, Material.metal));
 
-    //Raw Copper Block
-    public static final Block blockRawCopper = raw
-            .setTextures("rawcopper.png")
-            .setTicking(true)
-            .build(new Block("block.raw.copper", blockID++, Material.metal) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block blockRawCopperTarnished = raw
-            .setTextures("rawtarnishedcopper.png")
-            .setTicking(true)
-            .build(new Block("block.raw.copper.tarnished", blockID++, Material.metal) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block blockRawCopperCorroded = raw
-            .setTextures("rawcorrodedcopper.png")
-            .build(new Block("block.raw.copper.corroded", blockID++, Material.metal));
-
     //Flint Block
     public static final Block blockFlint = raw
             .setTextures("flintblock.png")
@@ -404,12 +367,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("goldpebble2.png")
             .setTextures("goldpebble3.png")
             .build(new BlockOverlayRawGold("overlay.gold", blockID++, Material.metal));
-    public static final Block overlayRawCopper = pebble
-            .setTextures("copperpebble1.png")
-            .setTextures("copperpebble2.png")
-            .setTextures("copperpebble3.png")
-            .build(new BlockOverlayRawCopper("overlay.copper", blockID++, Material.metal));
-
 
     // Ores
     private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
@@ -417,270 +374,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setHardness(3.0f)
             .setResistance(5.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block oreCopperStone = ore
-            .setTextures("copperstone.png")
-            .build(new BlockOreCopper("ore.copper.stone", blockID++));
-    public static final Block oreCopperBasalt = ore
-            .setTextures("copperbasalt.png")
-            .build(new BlockOreCopper("ore.copper.basalt", blockID++));
-    public static final Block oreCopperLimestone = ore
-            .setTextures("copperlimestone.png")
-            .build(new BlockOreCopper("ore.copper.limestone", blockID++));
-    public static final Block oreCopperGranite = ore
-            .setTextures("coppergranite.png")
-            .build(new BlockOreCopper("ore.copper.granite", blockID++));
-
-
-    // Copper Blocks
-    public static final Block blockCopper = raw
-            .setTextures("copperblock.png")
-            .setTicking(true)
-            .build(new Block("block.copper", blockID++, Material.metal) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block blockCopperTarnished = raw
-            .setTextures("tarnishedcopperblock.png")
-            .setTicking(true)
-            .build(new Block("block.copper.tarnished", blockID++, Material.metal) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block blockCopperCorroded = raw
-            .setTextures("corrodedcopperblock.png")
-            .build(new Block("block.copper.corroded", blockID++, Material.metal));
-
-    public static final Block meshCopper = raw
-            .setTextures("coppergrate.png")
-            .setTicking(true)
-            .build(new BlockTransparent("mesh.copper", blockID++, Material.metal, true) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block meshCopperTarnished = raw
-            .setTextures("tarnishedcoppergrate.png")
-            .setTicking(true)
-            .build(new BlockTransparent("mesh.copper.tarnished", blockID++, Material.metal, true) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block meshCopperCorroded = raw
-            .setTextures("corrodedcoppergrate.png")
-            .build(new BlockTransparent("mesh.copper.corroded", blockID++, Material.metal, true) {
-            });
-
-    public static final Block pipeCopper = raw
-            .setTextures("copperpipe.png")
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
-            .build(new BlockCopperPipe("pipe.copper", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), false));
-
-    public static final Block pipeCopperTarnished = raw
-            .setTextures("tarnishedcopperpipe.png")
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "tarnished_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
-            .build(new BlockCopperPipe("pipe.copper.tarnished", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), false) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-
-    public static final Block pipeCopperCorroded = raw
-            .setTextures("corrodedcopperpipe.png")
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "corroded_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
-            .build(new BlockCopperPipe("pipe.copper.corroded", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), false) {
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                }
-            });
-
-    public static final Block trapdoorCopper = raw
-            .setBlockModel(new BlockModelRenderBlocks(30))
-            .setTopBottomTexture("coppertrapdoortop.png")
-            .setSideTextures("coppertrapdoorside.png")
-            .setVisualUpdateOnMetadata()
-            .setTicking(true)
-            .build(new BlockTrapDoor("trapdoor.copper", blockID++, Material.stone, false) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block trapdoorCopperTarnished = raw
-            .setBlockModel(new BlockModelRenderBlocks(30))
-            .setTopBottomTexture("tarnishedcoppertrapdoortop.png")
-            .setSideTextures("tarnishedcoppertrapdoorside.png")
-            .setVisualUpdateOnMetadata()
-            .setTicking(true)
-            .build(new BlockTrapDoor("trapdoor.copper.tarnished", blockID++, Material.stone, false) {
-                private int ticks;
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block trapdoorCopperCorroded = raw
-            .setBlockModel(new BlockModelRenderBlocks(30))
-            .setTopBottomTexture("corrodedcoppertrapdoortop.png")
-            .setSideTextures("corrodedcoppertrapdoorside.png")
-            .setVisualUpdateOnMetadata()
-            .build(new BlockTrapDoor("trapdoor.copper.corroded", blockID++, Material.stone, false));
-
-
-    public static final Block doorCopperBottom = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setTextures("copperdoorbottom.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockCopperDoor("door.copper.bottom", blockID++, Material.stone, false));
-    public static final Block doorCopperTop = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setTextures("copperdoortop.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockCopperDoor("door.copper.top", blockID++, Material.stone, true));
-
-    public static final Block doorCopperTarnishedBottom = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setTextures("tarnishedcopperdoorbottom.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockCopperTarnishedDoor("door.copper.tarnished.bottom", blockID++, Material.stone, false));
-    public static final Block doorCopperTarnishedTop = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setTextures("tarnishedcopperdoortop.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockCopperTarnishedDoor("door.copper.tarnished.top", blockID++, Material.stone, true));
-
-    public static final Block doorCopperCorrodedBottom = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setTextures("corrodedcopperdoorbottom.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockCopperDoor("door.copper.corroded.bottom", blockID++, Material.stone, false) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorCopperCorroded)};
-                    }
-                    return null;
-                }
-            });
-    public static final Block doorCopperCorrodedTop = raw
-            .setBlockModel(new BlockModelRenderBlocks(7))
-            .setTextures("corrodedcopperdoortop.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockCopperDoor("door.copper.corroded.top", blockID++, Material.stone, true) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorCopperCorroded)};
-                    }
-                    return null;
-                }
-            });
-
-
-    public static final Block fenceCopper = raw
-            .setBlockModel(new BlockModelRenderBlocks(31))
-            .setTextures("copperfence.png")
-            .setTextures("copperframe.png")
-            .setTextures("copperrod.png")
-            .setVisualUpdateOnMetadata()
-            .build(new BlockFenceCopper("fence.copper", blockID++, Material.metal));
-    public static final Block fenceCopperTarnished = raw
-            .setBlockModel(new BlockModelRenderBlocks(31))
-            .setTextures("tarnishedcopperfence.png")
-            .setTextures("tarnishedcopperframe.png")
-            .setTextures("tarnishedcopperrod.png")
-            .setVisualUpdateOnMetadata()
-            .build(new BlockFenceCopperTarnished("fence.copper.tarnished", blockID++, Material.metal));
-    public static final Block fenceCopperCorroded = raw
-            .setBlockModel(new BlockModelRenderBlocks(31))
-            .setTextures("corrodedcopperfence.png")
-            .setTextures("corrodedcopperframe.png")
-            .setTextures("corrodedcopperrod.png")
-            .setVisualUpdateOnMetadata()
-            .build(new BlockFenceCopperCorroded("fence.copper.corroded", blockID++, Material.metal) {
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                }
-            });
-
-    public static final Block pressureplateCopper = raw
-            .setTextures("copper.png")
-            .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockCopperPressurePlate("pressureplate.copper", blockID++, Material.metal));
-    public static final Block pressureplateCopperTarnished = raw
-            .setTextures("tarnishedcopper.png")
-            .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockCopperTarnishedPressurePlate("pressureplate.copper.tarnished", blockID++, Material.metal));
-    public static final Block pressureplateCopperCorroded = raw
-            .setTextures("corrodedcopper.png")
-            .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockCopperCorrodedPressurePlate("pressureplate.copper.corroded", blockID++, Material.metal));
 
     public static final Block trapdoorSteel = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
@@ -873,20 +566,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new Block("soulslate", blockID++, Material.stone));
 
     // Items
-    public static Item oreRawCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemRawCopper("ore.raw.copper", itemID++), "rawcopper.png");
 
-    public static Item ingotCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new Item("ingot.copper", itemID++), "copperingot.png");
-
-    public static Item doorCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemCopperDoor("door.copper", itemID++), "copperdoor.png");
-
-    public static Item doorCopperTarnished = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemCopperTarnishedDoor("door.copper.tarnished", itemID++), "tarnishedcopperdoor.png");
-
-    public static Item doorCopperCorroded = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemCopperCorrodedDoor("door.copper.corroded", itemID++), "corrodedcopperdoor.png");
 
     public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
@@ -990,51 +670,8 @@ public static final Block slabPermafrostPolished = slab
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new BlockSlab(brickOlivine, blockID++));
-    public static final Block slabCopper = slab
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("copperblock.png")
-            .setTicking(true)
-            .build(new BlockSlab(blockCopper, blockID++) {
-                private int ticks;
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block slabCopperTarnished = slab
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTicking(true)
-            .setTextures("tarnishedcopperblock.png")
-            .build(new BlockSlab(blockCopperTarnished, blockID++) {
-                private int ticks;
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block slabCopperCorroded = slab
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("corrodedcopperblock.png")
-            .build(new BlockSlab(blockCopperCorroded, blockID++));
 
-
-    // Stairs
+      // Stairs
     public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -1100,49 +737,6 @@ public static final Block slabPermafrostPolished = slab
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new BlockStairs(brickOlivine, blockID++));
-    public static final Block stairsCopper = stairs
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("copperblock.png")
-            .setTicking(true)
-            .build(new BlockStairs(blockCopper, blockID++) {
-                private int ticks;
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block stairsCopperTarnished = stairs
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("tarnishedcopperblock.png")
-            .setTicking(true)
-            .build(new BlockStairs(blockCopperTarnished, blockID++) {
-                private int ticks;
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
-                }
-            });
-    public static final Block stairsCopperCorroded = stairs
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("corrodedcopperblock.png")
-            .build(new BlockStairs(blockCopperCorroded, blockID++));
-
     @Override
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
@@ -1153,35 +747,6 @@ public static final Block slabPermafrostPolished = slab
         stoneToMossMap.put(BonusBlocks.cobblednetherrack, Block.netherrack);
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
-        ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperBasalt, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperLimestone, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperGranite, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopper, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopper, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedTop, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedTop, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopper, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopper, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
 
@@ -1244,7 +809,6 @@ public static final Block slabPermafrostPolished = slab
         templateItemtoBlock.addInput('X', Item.flint).create("block_of_flint", new ItemStack(BonusBlocks.blockFlint, 1));
         templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
         templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
-        templateItemtoBlock.addInput('X', BonusBlocks.oreRawCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockRawCopper, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
         templateBlocktoItem.addInput('X', BonusBlocks.blockBone).create("block_of_bone_to_bone", new ItemStack(Item.bone, 9));
@@ -1254,21 +818,6 @@ public static final Block slabPermafrostPolished = slab
         templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint_to_flint", new ItemStack(Item.flint, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold_to_raw_gold", new ItemStack(Item.oreRawGold, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron_to_raw_iron", new ItemStack(Item.oreRawIron, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockRawCopper).create("block_of_raw_copper_to_raw_copper", new ItemStack(BonusBlocks.oreRawCopper, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusBlocks.ingotCopper, 4));
-
-        RecipeBuilder.Shaped(MOD_ID, "CCC", "C C", "CCC")
-                .addInput('C', BonusBlocks.ingotCopper)
-                .create("copper_mesh", new ItemStack(BonusBlocks.meshCopper, 8));
-
-        RecipeBuilder.Shaped(MOD_ID, "CIC")
-                .addInput('C', BonusBlocks.blockCopper)
-                .addInput('I', BonusBlocks.ingotCopper)
-                .create("copper_pipe", new ItemStack(BonusBlocks.pipeCopper, 8));
-        RecipeBuilder.Shaped(MOD_ID, "C", "I", "C")
-                .addInput('C', BonusBlocks.blockCopper)
-                .addInput('I', BonusBlocks.ingotCopper)
-                .create("copper_pipe", new ItemStack(BonusBlocks.pipeCopper, 8));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.flowerCyan).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));
@@ -1285,8 +834,6 @@ public static final Block slabPermafrostPolished = slab
         templateMushroomToBlock.addInput('X', Block.mushroomRed).create("red_mushroom_block", new ItemStack(BonusBlocks.blockMushroomRed, 4));
         templateMushroomToBlock.addInput('X', Block.mushroomBrown).create("brown_mushroom_block", new ItemStack(BonusBlocks.blockMushroomBrown, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.mushroomGray).create("gray_mushroom_block", new ItemStack(BonusBlocks.blockMushroomGray, 4));
-
-        templateMushroomToBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_copper", new ItemStack(BonusBlocks.blockCopper, 1));
 
         RecipeBuilderShaped templateBricks = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
         templateBricks.addInput('X', BonusBlocks.netherrack).create("netherrack_bricks", new ItemStack(BonusBlocks.brickNetherrack, 4));
@@ -1412,7 +959,7 @@ public static final Block slabPermafrostPolished = slab
         templateSlab.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_slab", new ItemStack(BonusBlocks.slabCobblestoneMossy, 6));
         templateSlab.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_slab", new ItemStack(BonusBlocks.slabMossyCobbledNetherrack, 6));
         templateSlab.addInput('X', BonusBlocks.cobblednetherrack).create("cobblestone_netherrack_slab", new ItemStack(BonusBlocks.slabCobbledNetherrack, 6));
-        templateSlab.addInput('X', BonusBlocks.ingotCopper).create("copper_slab", new ItemStack(BonusBlocks.slabCopper, 6));
+
 
         RecipeBuilderShaped templateStairs = new RecipeBuilderShaped(MOD_ID, "X ", "XX ", "XXX");
         templateStairs.addInput('X', Block.brickGold).create("gold_brick_stairs", new ItemStack(BonusBlocks.stairsBrickGold, 6));
@@ -1430,20 +977,6 @@ public static final Block slabPermafrostPolished = slab
         templateStairs.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_stairs", new ItemStack(BonusBlocks.stairsCobblestoneMossy, 6));
         templateStairs.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_stairs", new ItemStack(BonusBlocks.stairsMossyCobbledNetherrack, 6));
         templateStairs.addInput('X', BonusBlocks.cobblednetherrack).create("cobblestone_netherrack_stairs", new ItemStack(BonusBlocks.stairsCobbledNetherrack, 6));
-        templateStairs.addInput('X', BonusBlocks.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 6));
-
-        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
-                .addInput('P', BonusBlocks.ingotCopper)
-                .create("crate", new ItemStack(BonusBlocks.doorCopper, 2));
-
-        RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
-                .addInput('P', BonusBlocks.ingotCopper)
-                .addInput('C', BonusBlocks.blockCopper)
-                .create("crate", new ItemStack(BonusBlocks.fenceCopper, 8));
-
-        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
-                .addInput('P', BonusBlocks.ingotCopper)
-                .create("crate", new ItemStack(BonusBlocks.trapdoorCopper, 6));
 
 /*
         RecipeBuilder.Furnace(MOD_ID)
@@ -1452,16 +985,8 @@ public static final Block slabPermafrostPolished = slab
 */
 
         RecipeBuilder.Furnace(MOD_ID)
-                .setInput("bonusblocks:copper_ores")
-                .create("copper_ores_to_copper", BonusBlocks.ingotCopper.getDefaultStack());
-
-        RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.blockClay)
                 .create("baked_clay_furnace", BonusBlocks.clayBaked.getDefaultStack());
-
-        RecipeBuilder.Furnace(MOD_ID)
-                .setInput(BonusBlocks.oreRawCopper)
-                .create("copper_ingot", BonusBlocks.ingotCopper.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(BonusBlocks.cobblednetherrack)
@@ -1472,16 +997,8 @@ public static final Block slabPermafrostPolished = slab
                 .create("mossy_netherrack_to_cobbled_netherrack", BonusBlocks.cobblednetherrack.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput("bonusblocks:copper_ores")
-                .create("copper_ores_to_copper_blast", BonusBlocks.ingotCopper.getDefaultStack());
-
-        RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.blockClay)
                 .create("baked_clay_blast", BonusBlocks.clayBaked.getDefaultStack());
-
-        RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(BonusBlocks.oreRawCopper)
-                .create("copper_ingot_blast", BonusBlocks.ingotCopper.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(BonusBlocks.cobblednetherrack)
@@ -1540,6 +1057,5 @@ public static final Block slabPermafrostPolished = slab
         addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
         addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
         addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
-        addBorder(ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
     }
 }

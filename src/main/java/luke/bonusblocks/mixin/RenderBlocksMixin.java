@@ -34,13 +34,6 @@ public abstract class RenderBlocksMixin  {
     }
 
     @Shadow public abstract float getBlockBrightness(WorldSource blockAccess, int x, int y, int z);
-
-    @Inject(method = "renderBlockByRenderType",at=@At(value="INVOKE",target = "Lnet/minecraft/core/block/Block;setBlockBoundsBasedOnState(Lnet/minecraft/core/world/World;III)V"), cancellable = true)
-    private void renderPipe(Block block, int renderType, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
-        if (block.id == BonusBlocks.pipeCopper.id) {
-            cir.setReturnValue(renderBlockPipe(block,x,y,z));
-        }
-    }
     @Unique
     private Boolean renderBlockPipe(Block block, int x, int y, int z) {
         Tessellator tessellator = Tessellator.instance;

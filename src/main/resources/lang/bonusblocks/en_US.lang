@@ -118,40 +118,6 @@ tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
 tile.bonusblocks.block.raw.gold.name=Block of Raw Gold
 tile.bonusblocks.block.raw.gold.desc=A solid block of raw gold, for flaunting your bling.
-tile.bonusblocks.block.raw.copper.name=Block of Raw Copper
-tile.bonusblocks.block.raw.copper.desc=A solid block of raw copper.
-tile.bonusblocks.block.raw.copper.tarnished.name=Block of Raw Tarnished Copper
-tile.bonusblocks.block.raw.copper.tarnished.desc=A solid block of raw tarnished copper.
-tile.bonusblocks.block.raw.copper.corroded.name=Block of Raw Corroded Copper
-tile.bonusblocks.block.raw.copper.corroded.desc=A solid block of raw corroded copper.
-
-tile.bonusblocks.block.copper.name=Block of Copper
-tile.bonusblocks.block.copper.desc=A solid block of copper. Corrosive!
-tile.bonusblocks.block.copper.tarnished.name=Block of Tarnished Copper
-tile.bonusblocks.block.copper.tarnished.desc=A solid block of tarnished copper. Corrosive!
-tile.bonusblocks.block.copper.corroded.name=Block of Corroded Copper
-tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Corrosive!
-
-tile.bonusblocks.mesh.copper.name=Copper Mesh Block
-tile.bonusblocks.mesh.copper.desc=A wireframe block of copper.
-tile.bonusblocks.mesh.copper.tarnished.name=Tarnished Copper Mesh Block
-tile.bonusblocks.mesh.copper.tarnished.desc=A wireframe block of tarnished copper.
-tile.bonusblocks.mesh.copper.corroded.name=Corroded Copper Mesh Block
-tile.bonusblocks.mesh.copper.corroded.desc=A wireframe block of corroded copper.
-
-tile.bonusblocks.pressureplate.copper.name=Copper Pressure Plate
-tile.bonusblocks.pressureplate.copper.desc=Emits a redstone signal when items step on it.
-tile.bonusblocks.pressureplate.copper.tarnished.name=Tarnished Copper  Pressure Plate
-tile.bonusblocks.pressureplate.copper.tarnished.desc=Emits a redstone signal when items step on it. Slighty Tarnished.
-tile.bonusblocks.pressureplate.copper.corroded.name=Corroded Copper  Pressure Plate
-tile.bonusblocks.pressureplate.copper.corroded.desc=Emits a redstone signal when items step on it. Completely Corroded.
-
-tile.bonusblocks.pipe.copper.name=Copper Pipe
-tile.bonusblocks.pipe.copper.desc=A long tube of copper, purely for decoration.
-tile.bonusblocks.pipe.copper.tarnished.name=Tarnished Copper Pipe
-tile.bonusblocks.pipe.copper.tarnished.desc=A long tube of tarnished copper, purely for decoration.
-tile.bonusblocks.pipe.copper.corroded.name=Corroded Copper Pipe
-tile.bonusblocks.pipe.copper.corroded.desc=A long tube of corroded copper, purely for decoration.
 
 tile.netherrack.name=Mossy Cobbled Netherrack
 tile.netherrack.desc=Cobbled Netherrack with added red greenery.
@@ -160,33 +126,6 @@ tile.bonusblocks.netherrack.desc=A block of solid netherrack.
 tile.bonusblocks.cobble.netherrack.name=Cobbled Netherrack
 tile.bonusblocks.cobble.netherrack.desc=Netherrack, smashed apart and reconstituted.
 
-tile.bonusblocks.trapdoor.copper.name=Copper Trapdoor
-tile.bonusblocks.trapdoor.copper.desc=Like a door but flat and made of copper.
-tile.bonusblocks.trapdoor.copper.tarnished.name=Tarnished Copper Trapdoor
-tile.bonusblocks.trapdoor.copper.tarnished.desc=Like a door but flat and made of tarnished copper.
-tile.bonusblocks.trapdoor.copper.corroded.name=Corroded Copper Trapdoor
-tile.bonusblocks.trapdoor.copper.corroded.desc=Like a door but flat and made of corroded copper.
-
-tile.bonusblocks.door.copper.top.name=Top Copper Door
-tile.bonusblocks.door.copper.top.desc=I hope you enjoy this mod.
-tile.bonusblocks.door.copper.bottom.name=Bottom Copper Door
-tile.bonusblocks.door.copper.bottom.desc=It has been a lot of fun working on it!
-tile.bonusblocks.door.copper.tarnished.top.name=Top Tarnished Copper Door
-tile.bonusblocks.door.copper.tarnished.top.desc=Scratch and sniff.
-tile.bonusblocks.door.copper.tarnished.bottom.name=Bottom Tarnished Copper Door
-tile.bonusblocks.door.copper.tarnished.bottom.desc=Meefy777 vs Phow
-tile.bonusblocks.door.copper.corroded.top.name=Top Corroded Copper Door
-tile.bonusblocks.door.copper.corroded.top.desc=Brap.
-tile.bonusblocks.door.copper.corroded.bottom.name=Bottom Corroded Copper Door
-tile.bonusblocks.door.copper.corroded.bottom.desc=Shart.
-
-tile.bonusblocks.fence.copper.name=Copper Fence
-tile.bonusblocks.fence.copper.desc=A fence made of lattice locked copper. Can be climbed!
-tile.bonusblocks.fence.copper.tarnished.name=Tarnished Copper Fence
-tile.bonusblocks.fence.copper.tarnished.desc=A fence made of lattice locked tarnished copper. Can be climbed!
-tile.bonusblocks.fence.copper.corroded.name=CorrodedCopper Fence
-tile.bonusblocks.fence.copper.corroded.desc=A fence made of lattice locked corroded copper. Can be climbed!
-
 tile.bonusblocks.trapdoor.steel.name=Steel Trapdoor
 tile.bonusblocks.trapdoor.steel.desc=Like a door but flat and made of steel.
 tile.bonusblocks.door.steel.top.name=Top Steel Door
@@ -194,34 +133,10 @@ tile.bonusblocks.door.steel.top.desc=I’m a big fan of steel. It really gets my
 tile.bonusblocks.door.steel.bottom.name=Bottom Steel Door
 tile.bonusblocks.door.steel.bottom.desc=God that joke was horrible...
 
-tile.bonusblocks.ore.copper.stone.name=Stone Copper Ore
-tile.bonusblocks.ore.copper.stone.desc=Raw copper embedded in stone.
-tile.bonusblocks.ore.copper.basalt.name=Basalt Copper Ore
-tile.bonusblocks.ore.copper.basalt.desc=Raw copper embedded in basalt.
-tile.bonusblocks.ore.copper.limestone.name=Limestone Copper Ore
-tile.bonusblocks.ore.copper.limestone.desc=Raw copper embedded in limestone.
-tile.bonusblocks.ore.copper.granite.name=Granite Copper Ore
-tile.bonusblocks.ore.copper.granite.desc=Raw copper embedded in granite.
-
-item.bonusblocks.ore.raw.copper.name=Raw Copper Ore
-item.bonusblocks.ore.raw.copper.desc=A chunk of unprocessed copper. Can be smelted into a copper ingot.
-item.bonusblocks.ingot.copper.name=Copper Ingot
-item.bonusblocks.ingot.copper.desc=A metal bar of copper used to make decorative blocks.
-item.bonusblocks.door.copper.name=Copper Door
-item.bonusblocks.door.copper.desc=Every factory needs one.
-item.bonusblocks.door.copper.tarnished.name=Tarnished Copper Door
-item.bonusblocks.door.copper.tarnished.desc=A factory needs one.
-item.bonusblocks.door.copper.corroded.name=Corroded Copper Door
-item.bonusblocks.door.copper.corroded.desc=No factory needs one.
-item.bonusblocks.door.steel.name=Steel Door
-item.bonusblocks.door.steel.desc=A blast resistant door that unlocks when powered.
-
 tile.bonusblocks.overlay.gold.name=Gold Nuggets
 tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.
 tile.bonusblocks.overlay.iron.name=Iron Nuggets
 tile.bonusblocks.overlay.iron.desc=A cluster of raw iron.
-tile.bonusblocks.overlay.copper.name=Copper Nuggets
-tile.bonusblocks.overlay.copper.desc=A cluster of raw copper.
 
 tile.bonusblocks.block.bone.name=Block of Bones
 tile.bonusblocks.block.bone.desc=Fossilized remains of the past. Spooky...
@@ -297,12 +212,6 @@ tile.bonusblocks.slab.cobble.netherrack.name=Cobbled Netherrack Slab
 tile.bonusblocks.slab.cobble.netherrack.desc=A slab of cobbled netherrack
 tile.bonusblocks.slab.netherrack.name=Mossy Cobbled Netherrack Slab
 tile.bonusblocks.slab.netherrack.desc=A slab of mossy cobbled netherrack
-tile.bonusblocks.slab.block.copper.name=Copper Slab
-tile.bonusblocks.slab.block.copper.desc=A slab of copper.
-tile.bonusblocks.slab.block.copper.tarnished.name=Tarnished Copper Slab
-tile.bonusblocks.slab.block.copper.tarnished.desc=A slab of tarnished copper.
-tile.bonusblocks.slab.block.copper.corroded.name=Corroded Copper Slab
-tile.bonusblocks.slab.block.copper.corroded.desc=A slab of corroded copper.
 tile.bonusblocks.slab.brick.steel.name=Steel Brick Slab
 tile.bonusblocks.slab.brick.steel.desc=A slab of steel bricks.
 tile.bonusblocks.slab.brick.olivine.name=Olivine Brick Slab
@@ -342,12 +251,6 @@ tile.bonusblocks.stairs.cobble.netherrack.name=Cobbled Netherrack Stairs
 tile.bonusblocks.stairs.cobble.netherrack.desc=Cobbled netherrack block used for rapid vertical movement.
 tile.bonusblocks.stairs.netherrack.name=Mossy Cobbled Netherrack Stairs
 tile.bonusblocks.stairs.netherrack.desc=Mossy cobbled netherrack block used for rapid vertical movement.
-tile.bonusblocks.stairs.block.copper.name=Copper Stairs
-tile.bonusblocks.stairs.block.copper.desc=Copper block used for rapid vertical movement.
-tile.bonusblocks.stairs.block.copper.tarnished.name=Tarnished Copper Stairs
-tile.bonusblocks.stairs.block.copper.tarnished.desc=Tarnished copper block used for rapid vertical movement.
-tile.bonusblocks.stairs.block.copper.corroded.name=Corroded Copper Stairs
-tile.bonusblocks.stairs.block.copper.corroded.desc=Corroded copper block used for rapid vertical movement.
 
 tile.lamp.idle.silver.name=Silver Lamp
 tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
