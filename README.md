@@ -7,9 +7,6 @@
   + Crafted with 9 planks
 * Empty Bookshelf
   + Crafted like a bookshelf but without the books
-* Branches
-  + Crafted with 4 sticks
-  + Crunchy
 * 3 Leaves
   + Maple Leaves
   + Jacaranda Leaves

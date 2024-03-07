@@ -97,23 +97,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("bookshelf.empty.planks.oak", blockID++, Material.wood));
 
-    // Leaves and Branch
-    public static final BlockBuilder leaves = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.2F)
-            .setResistance(0.2F)
-            .setFlammability(30, 60)
-            .setTickOnLoad()
-            .setVisualUpdateOnMetadata()
-            .setItemBlock(ItemBlockLeaves::new)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH);
-
-    public static final Block branch = leaves
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
-            .setTextures("branch.png")
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockBranch("branch", blockID++, Material.leaves));
-
     // Logs
     public static final BlockBuilder log = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -1274,7 +1257,6 @@ public static final Block slabPermafrostPolished = slab
         LookupFuelFurnace.instance.addFuelEntry(crate.id, 300);
 //        LookupFuelFurnace.instance.addFuelEntry(crateSticky.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
     }
 
     public void onRecipesReady() {
@@ -1434,11 +1416,6 @@ public static final Block slabPermafrostPolished = slab
             RecipeBuilder.Shaped(MOD_ID, "PPP", "   ", "PPP")
                     .addInput('P', ("minecraft:planks"))
                     .create("empty_bookshelf", new ItemStack(BonusBlocks.bookshelfEmptyPlanksOak, 1));
-
-            RecipeBuilder.Shaped(MOD_ID, "PP", "PP")
-                    .addInput('P', (Item.stick))
-                    .create("branches", new ItemStack(BonusBlocks.branch, 2));
-
 
         RecipeBuilderShaped templatePolished = new RecipeBuilderShaped(MOD_ID, "X", "X");
         templatePolished.addInput('X', Block.marble).create("marble_polished", new ItemStack(BonusBlocks.marblePolished, 2));
