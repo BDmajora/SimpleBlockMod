@@ -104,8 +104,6 @@ tile.bonusblocks.brick.olivine.name=Olivine Bricks
 tile.bonusblocks.brick.olivine.desc=Stacked bricks of olivine.
 tile.bonusblocks.soulslate.name=Soul Slate
 tile.bonusblocks.soulslate.desc=Highly compacted soul sand. Listen and you can almost hear it whisper.
-tile.bonusblocks.brimstone.name=Brimstone
-tile.bonusblocks.brimstone.desc=Incredibly tough blackened rock from the depths of hell.
 
 tile.bonusblocks.clay.baked.name=Baked Clay
 tile.bonusblocks.clay.baked.desc=A scorched block of solid clay.

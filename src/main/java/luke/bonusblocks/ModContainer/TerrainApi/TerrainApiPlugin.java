@@ -63,7 +63,6 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.cobblednetherrack, 32, 16, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.netherrack, 64, 8, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Block.slate, 32, 4, 0.75f, 1.0f, false);
-        ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.brimstone, 32, 2, 0.0f, 0.25f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.soulslate, 32, 4, 0.0f, 0.50f, false);
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.spinifex.id), 4, -1f, 1,

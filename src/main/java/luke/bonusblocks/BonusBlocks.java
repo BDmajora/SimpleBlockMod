@@ -902,15 +902,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("soulslate.png")
             .build(new Block("soulslate", blockID++, Material.stone));
 
-    // Brimstone
-    public static final Block brimstone = stone
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.4f))
-            .setHardness(200.0f)
-            .setResistance(20000.0f)
-            .setTextures("brimstone.png")
-            .setInfiniburn()
-            .build(new BlockBrimstone("brimstone", blockID++, Material.piston));
-
     // Items
     public static Item oreRawCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemRawCopper("ore.raw.copper", itemID++), "rawcopper.png");
@@ -1562,10 +1553,6 @@ public static final Block slabPermafrostPolished = slab
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.basalt)
                 .create("basalt_to_olivine", Item.olivine.getDefaultStack());
-
-        RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(BonusBlocks.netherrack)
-                .create("netherrack_to_brimstone", BonusBlocks.brimstone.getDefaultStack());
 
     }
 
