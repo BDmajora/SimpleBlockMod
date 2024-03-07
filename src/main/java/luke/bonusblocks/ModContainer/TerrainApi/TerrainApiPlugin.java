@@ -2,8 +2,6 @@ package luke.bonusblocks.ModContainer.TerrainApi;
 
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.biomes.ModBiomes;
-import luke.bonusblocks.biomes.WorldFeaturePebbles;
-import luke.bonusblocks.biomes.WorldFeaturePumice;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -67,8 +65,6 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Block.slate, 32, 4, 0.75f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.brimstone, 32, 2, 0.0f, 0.25f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.soulslate, 32, 4, 0.0f, 0.50f, false);
-        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f,  4,
-                new Biome[]{Biomes.NETHER_NETHER});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.spinifex.id), 4, -1f, 1,
                 new Biome[]{ModBiomes.OVERWORLD_OUTBACK_MESA});
@@ -78,10 +74,6 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.deadbush.id), 4, -1f, 1,
                 new Biome[]{ModBiomes.OVERWORLD_OUTBACK_MESA});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeaturePebbles(Block.overlayPebbles.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_RAINFOREST, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_SHRUBLAND,
-                        Biomes.OVERWORLD_OUTBACK_GRASSY, Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.flowerLime.id), 4);
 
