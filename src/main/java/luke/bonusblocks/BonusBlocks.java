@@ -368,17 +368,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockAxisAligned("block.bone", blockID++, Material.stone));
 
-    // Thatch
-    public static final Block thatch = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.6f, 1.2f))
-            .setHardness(0.6f)
-            .setResistance(0.6f)
-            .setSideTextures("thatchside.png")
-            .setTopBottomTexture("thatchtop.png")
-            .setFlammability(60, 120)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new BlockThatch("thatch", blockID++, Material.grass));
-
     // Cloth Block
     public static final Block blockCloth = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
@@ -1483,7 +1472,6 @@ public static final Block slabPermafrostPolished = slab
         LookupFuelFurnace.instance.addFuelEntry(crate.id, 300);
 //        LookupFuelFurnace.instance.addFuelEntry(crateSticky.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(thatch.id, 400);
         LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
         LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
@@ -1560,11 +1548,6 @@ public static final Block slabPermafrostPolished = slab
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawCopper).create("block_of_raw_copper_to_raw_copper", new ItemStack(BonusBlocks.oreRawCopper, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather_to_leather", new ItemStack(Item.leather, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusBlocks.ingotCopper, 4));
-
-        RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
-                .addInput('W', Item.wheat)
-                .addInput('S', Item.stick)
-                .create("block_of_thatch", new ItemStack(BonusBlocks.thatch, 4));
 
         RecipeBuilder.Shaped(MOD_ID, "CCC", "C C", "CCC")
                 .addInput('C', BonusBlocks.ingotCopper)

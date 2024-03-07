@@ -56,9 +56,6 @@
   + Raw Copper
   + Flint
   + Crude Steel
-* Wicker and Thatch
-  + Crafted with 2 sticks and 2 wheat/leather
-  + Decoration
 * Copper Ore
  + Variants for stone types
  + Drops 2-6 raw copper
