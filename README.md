@@ -101,10 +101,6 @@
   + Generates at the very bottom of the nether
   + Extremely hard to mine, like old obsidian
   + Crafted by blast smelting netherrack
-* Pumice and Molten Pumice
-  + Generates in the lava oceans in the nether
-  + Absorbs lava like a sponge absorbs water
-  + Cools down when placed in water
 * More Slabs
   + 24 blocks now have slabs to go along with them
 * More Stairs

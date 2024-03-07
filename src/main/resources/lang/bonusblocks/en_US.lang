@@ -167,11 +167,6 @@ tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
 tile.mesh.name=Iron Mesh Block
 tile.workbench.name=Crafting Table
 
-tile.bonusblocks.pumice.dry.name=Pumice
-tile.bonusblocks.pumice.dry.desc=Dried pumice, good for absorbing up lava.
-tile.bonusblocks.pumice.wet.name=Molten Pumice
-tile.bonusblocks.pumice.wet.desc=Pumice full of lava.
-
 tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
 tile.bonusblocks.block.raw.gold.name=Block of Raw Gold
