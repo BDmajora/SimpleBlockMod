@@ -46,8 +46,6 @@
   + Crafted with 4 of each mushroom
 * Tons of new "Block of" blocks
   + Bone
-  + Cloth, bouncy like modern slime
-  + Slime, sticky like modern honey
   + Sulphur, explodes like explosive charge
   + Sugar, dissolves in water
   + Leather
@@ -107,9 +105,6 @@
   + Generates in the lava oceans in the nether
   + Absorbs lava like a sponge absorbs water
   + Cools down when placed in water
-* Soul Wax Candle and Soul Wax
-  + Crafted with soul wax and string
-  + Soul wax is made from smelting soul sand
 * More Slabs
   + 24 blocks now have slabs to go along with them
 * More Stairs
@@ -123,9 +118,6 @@
 
 
 ## Items
-* Soul Wax Candle and Soul Wax
-+ Soul wax is from smelting soulsand
-+ Soul wax and string crafts a candle
 * Raw Copper and Copper Ingot
 * Copper Doors and Steel Door
 * Pumpkin Pie

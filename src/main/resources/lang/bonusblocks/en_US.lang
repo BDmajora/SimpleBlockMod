@@ -1,7 +1,6 @@
 tile.bonusblocks.crate.name=Crate
 tile.bonusblocks.crate.desc=A crate made from the heads of pistons.
 tile.bonusblocks.crate.sticky.name=Sticky Crate
-tile.bonusblocks.crate.sticky.desc= A slime-coated crate made from the heads of sticky pistons.
 
 tile.bonusblocks.box.name=Box
 tile.bonusblocks.box.desc=A wood box made from a chest.
@@ -282,8 +281,6 @@ tile.bonusblocks.overlay.iron.desc=A cluster of raw iron.
 tile.bonusblocks.overlay.copper.name=Copper Nuggets
 tile.bonusblocks.overlay.copper.desc=A cluster of raw copper.
 
-tile.bonusblocks.block.slime.name=Block of Slime
-tile.bonusblocks.block.slime.desc=Sticky and slimy mass of slime.
 tile.bonusblocks.block.cloth.name=Block of Cloth
 tile.bonusblocks.block.cloth.desc=Soft and bouncy cloth stretched into a block.
 tile.bonusblocks.block.bone.name=Block of Bones
@@ -424,14 +421,6 @@ tile.bonusblocks.pie.desc=I just want to pie already.
 
 item.bonusblocks.food.pie.name=Pumpkin Pie
 item.bonusblocks.food.pie.desc=Pumpkin spiced custard filled dessert.
-
-tile.bonusblocks.candle.soulwax.name=Soul Wax Candle
-tile.bonusblocks.candle.soulwax.desc=Say the line souljak.
-
-item.bonusblocks.candle.soulwax.name=Soul Wax Candle
-item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
-item.bonusblocks.soulwax.name=Soul Wax
-item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
 
 item.bonusblocks.bedroll.name=Sleeping Bag
 item.bonusblocks.bedroll.desc=Take a quick nap overnight that wont change your spawn-point.

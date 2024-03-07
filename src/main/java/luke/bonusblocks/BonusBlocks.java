@@ -378,16 +378,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockCloth("block.cloth", blockID++, Material.cloth));
 
-    // Slime Block
-    public static final Block blockSlime = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.5f))
-            .setHardness(0.2f)
-            .setResistance(0.2f)
-            .setLightOpacity(6)
-            .setTextures("slimeblock.png")
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockSlime("block.slime", blockID++, false));
-
     // Sulphur Block
     public static final Block blockSulphur = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
@@ -1053,20 +1043,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockPie("pie", blockID++));
 
-
-    // Soul Candle
-    public static final Block candleSoulwax = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 1.2f))
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setLuminance(10)
-            .setTextures(5, 7)
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelRenderBlocks(25))
-            .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockSoulCandle("candle.soulwax", blockID++));
-
-
 /*
     public static final Block bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
@@ -1085,12 +1061,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 */
 
     // Items
-    public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("candle.soulwax", itemID++, candleSoulwax), "soulwaxcandle.png");
-
-    public static Item soulwax = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new Item("soulwax", itemID++), "soulwax.png");
-
     public static Item oreRawCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemRawCopper("ore.raw.copper", itemID++), "rawcopper.png");
 
@@ -1524,7 +1494,6 @@ public static final Block slabPermafrostPolished = slab
 
         RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
         templateItemtoBlock.addInput('X', Item.bone).create("block_of_bone", new ItemStack(BonusBlocks.blockBone, 1));
-        templateItemtoBlock.addInput('X', Item.slimeball).create("block_of_slime", new ItemStack(BonusBlocks.blockSlime, 1));
         templateItemtoBlock.addInput('X', Item.sulphur).create("block_of_sulphur", new ItemStack(BonusBlocks.blockSulphur, 1));
         templateItemtoBlock.addInput('X', Item.dustSugar).create("block_of_sugar", new ItemStack(BonusBlocks.blockSugar, 1));
         templateItemtoBlock.addInput('X', Item.cloth).create("block_of_cloth", new ItemStack(BonusBlocks.blockCloth, 1));
@@ -1537,7 +1506,6 @@ public static final Block slabPermafrostPolished = slab
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
         templateBlocktoItem.addInput('X', BonusBlocks.blockBone).create("block_of_bone_to_bone", new ItemStack(Item.bone, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockSlime).create("block_of_slime_to_slime", new ItemStack(Item.slimeball, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSulphur).create("block_of_sulphur_to_sulphur", new ItemStack(Item.sulphur, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSugar).create("block_of_sugar_to_sugar", new ItemStack(Item.dustSugar, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCloth).create("block_of_cloth_to_cloth", new ItemStack(Item.cloth, 9));
@@ -1817,11 +1785,6 @@ public static final Block slabPermafrostPolished = slab
 //        templateCarvedSlab.addInput('X', BonusBlocks.slabScorchedstonePolished).create("scorchedstone_carved", new ItemStack(BonusBlocks.scorchedstoneCarved, 1));
         templateCarvedSlab.addInput('X', BonusBlocks.slabPermafrostPolished).create("permafrost_carved", new ItemStack(BonusBlocks.permafrostCarved, 1));
 
-        RecipeBuilder.Shaped(MOD_ID, "S", "W")
-                .addInput('S', (Item.string))
-                .addInput('W', (BonusBlocks.soulwax))
-                .create("soulwax_candle", new ItemStack(BonusBlocks.candleSoulwaxItem, 2));
-
         RecipeBuilderShaped templateSlab = new RecipeBuilderShaped(MOD_ID, "XXX");
         templateSlab.addInput('X', Block.slatePolished).create("slate_polished_slab", new ItemStack(BonusBlocks.slabSlatePolished, 6));
         templateSlab.addInput('X', BonusBlocks.marblePolished).create("marble_polished_slab", new ItemStack(BonusBlocks.slabMarblePolished, 6));
@@ -1913,10 +1876,6 @@ public static final Block slabPermafrostPolished = slab
                 .setInput(Block.netherrack)
                 .create("mossy_netherrack_to_cobbled_netherrack", BonusBlocks.cobblednetherrack.getDefaultStack());
 
-        RecipeBuilder.Furnace(MOD_ID)
-                .setInput(Block.soulsand)
-                .create("soulwax", BonusBlocks.soulwax.getDefaultStack());
-
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput("bonusblocks:copper_ores")
                 .create("copper_ores_to_copper_blast", BonusBlocks.ingotCopper.getDefaultStack());
@@ -1940,10 +1899,6 @@ public static final Block slabPermafrostPolished = slab
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.obsidian)
                 .create("obsidian_glass", BonusBlocks.glassObsidian.getDefaultStack());
-
-        RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(Block.soulsand)
-                .create("soulwax_blast", BonusBlocks.soulwax.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.cobbleStone)
