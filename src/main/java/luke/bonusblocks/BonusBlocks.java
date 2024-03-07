@@ -306,82 +306,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Block flowerLime = flower
             .setTextures("clovers.png")
             .build(new BlockFlower("flower.lime", blockID++));
-
-
-    public static final BlockBuilder petal = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(0.6f)
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.GROWS_FLOWERS, BlockTags.MINEABLE_BY_AXE);
-    public static final Block petalYellow = petal
-            .setTextures("yellowpetal.png")
-            .build(new BlockPetal("petal.yellow", blockID++, Material.grass));
-    public static final Block petalRed = petal
-            .setTextures("redpetal.png")
-            .build(new BlockPetal("petal.red", blockID++, Material.grass));
-    public static final Block petalCyan = petal
-            .setTextures("cyanpetal.png")
-            .build(new BlockPetal("petal.cyan", blockID++, Material.grass));
-    public static final Block petalPurple = petal
-            .setTextures("purplepetal.png")
-            .build(new BlockPetal("petal.purple", blockID++, Material.grass));
-    public static final Block petalPink = petal
-            .setTextures("pinkpetal.png")
-            .build(new BlockPetal("petal.pink", blockID++, Material.grass));
-    public static final Block petalSilver = petal
-            .setTextures("silverpetal.png")
-            .build(new BlockPetal("petal.silver", blockID++, Material.grass));
-    public static final Block petalOrange = petal
-            .setTextures("orangepetal.png")
-            .build(new BlockPetal("petal.orange", blockID++, Material.grass));
-    public static final Block petalLightBlue = petal
-            .setTextures("lightbluepetal.png")
-            .build(new BlockPetal("petal.lightblue", blockID++, Material.grass));
-    public static final Block petalMagenta = petal
-            .setTextures("magentapetal.png")
-            .build(new BlockPetal("petal.magenta", blockID++, Material.grass));
-    public static final Block petalLime = petal
-            .setTextures("limepetal.png")
-            .build(new BlockPetal("petal.lime", blockID++, Material.grass));
-
-
-    public static final BlockBuilder petalLayer = petal
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setUseInternalLight()
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.MINEABLE_BY_AXE);
-    public static final Block layerPetalYellow = petalLayer
-            .setTextures("yellowpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.yellow", blockID++, Material.grass));
-    public static final Block layerPetalRed = petalLayer
-            .setTextures("redpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.red", blockID++, Material.grass));
-    public static final Block layerPetalCyan = petalLayer
-            .setTextures("cyanpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.cyan", blockID++, Material.grass));
-    public static final Block layerPetalPurple = petalLayer
-            .setTextures("purplepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.purple", blockID++, Material.grass));
-    public static final Block layerPetalPink = petalLayer
-            .setTextures("pinkpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.pink", blockID++, Material.grass));
-    public static final Block layerPetalSilver = petalLayer
-            .setTextures("silverpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.silver", blockID++, Material.grass));
-    public static final Block layerPetalOrange = petalLayer
-            .setTextures("orangepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.orange", blockID++, Material.grass));
-    public static final Block layerPetalLightBlue = petalLayer
-            .setTextures("lightbluepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.lightblue", blockID++, Material.grass));
-    public static final Block layerPetalMagenta = petalLayer
-            .setTextures("magentapetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.magenta", blockID++, Material.grass));
-    public static final Block layerPetalLime = petalLayer
-            .setTextures("limepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.lime", blockID++, Material.grass));
-
     // Mushroom
     public static final Block mushroomGray = flower
             .setTextures("shroom.png")
@@ -1686,29 +1610,6 @@ public static final Block slabPermafrostPolished = slab
         templateMushroomToBlock.addInput('X', BonusBlocks.mushroomGray).create("gray_mushroom_block", new ItemStack(BonusBlocks.blockMushroomGray, 4));
 
         templateMushroomToBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_copper", new ItemStack(BonusBlocks.blockCopper, 1));
-
-        templateMushroomToBlock.addInput('X', Block.flowerRed).create("petal_red", new ItemStack(BonusBlocks.petalRed, 4));
-        templateMushroomToBlock.addInput('X', Block.flowerYellow).create("petal_yellow", new ItemStack(BonusBlocks.petalYellow, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerCyan).create("petal_cyan", new ItemStack(BonusBlocks.petalCyan, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerPurple).create("petal_purple", new ItemStack(BonusBlocks.petalPurple, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerPink).create("petal_pink", new ItemStack(BonusBlocks.petalPink, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerSilver).create("petal_silver", new ItemStack(BonusBlocks.petalSilver, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerOrange).create("petal_orange", new ItemStack(BonusBlocks.petalOrange, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerLightBlue).create("petal_lightblue", new ItemStack(BonusBlocks.petalLightBlue, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerMagenta).create("petal_magenta", new ItemStack(BonusBlocks.petalMagenta, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerLime).create("petal_lime", new ItemStack(BonusBlocks.petalLime, 4));
-
-        RecipeBuilderShaped templateFlowerBed = new RecipeBuilderShaped(MOD_ID, "XX");
-        templateFlowerBed.addInput('X', BonusBlocks.petalRed).create("petal_red_to_layer", new ItemStack(BonusBlocks.layerPetalRed, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalYellow).create("petal_yellow_to_layer", new ItemStack(BonusBlocks.layerPetalYellow, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalCyan).create("petal_cyan_to_layer", new ItemStack(BonusBlocks.layerPetalCyan, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalPurple).create("petal_purple_to_layer", new ItemStack(BonusBlocks.layerPetalPurple, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalPink).create("petal_pink_to_layer", new ItemStack(BonusBlocks.layerPetalPink, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalSilver).create("petal_silver_to_layer", new ItemStack(BonusBlocks.layerPetalSilver, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalOrange).create("petal_orange_to_layer", new ItemStack(BonusBlocks.layerPetalOrange, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalLightBlue).create("petal_lightblue_to_layer", new ItemStack(BonusBlocks.layerPetalLightBlue, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalMagenta).create("petal_magenta_to_layer", new ItemStack(BonusBlocks.layerPetalMagenta, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalLime).create("petal_lime_to_layer", new ItemStack(BonusBlocks.layerPetalLime, 8));
 
         RecipeBuilderShaped templateBricks = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
         templateBricks.addInput('X', BonusBlocks.netherrack).create("netherrack_bricks", new ItemStack(BonusBlocks.brickNetherrack, 4));

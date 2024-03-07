@@ -41,9 +41,6 @@
   + Clovers, Crafts into lime dye
   + Each flower generates in different biomes, have fun exploring!
   + Gray Mushroom, Crafts into gray dye
-* Petals
-  + Petal block variant for every flower
-  + includes a flower bed layer version
 * Mushroom Blocks
   + Red, Brown and Gray variants
   + Crafted with 4 of each mushroom

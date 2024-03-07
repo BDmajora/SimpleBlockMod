@@ -310,69 +310,6 @@ tile.bonusblocks.block.leather.desc=A box cow.
 tile.bonusblocks.block.wicker.name=Wicker
 tile.bonusblocks.block.wicker.desc=A decorative block of wicker.
 
-
-tile.flower.red.name=Rose Flower
-tile.flower.yellow.name=Dandelion Flower
-tile.bonusblocks.flower.lime.name=Clovers
-tile.bonusblocks.flower.lime.desc=A lucky plant found commonly.
-tile.bonusblocks.flower.purple.name=Heather Flower
-tile.bonusblocks.flower.purple.desc=A beautiful purple flower.
-tile.bonusblocks.flower.cyan.name=Bluebell Flower
-tile.bonusblocks.flower.cyan.desc=A beautiful cyan flower.
-tile.bonusblocks.flower.pink.name=Orchid Flower
-tile.bonusblocks.flower.pink.desc=A beautiful pink flower.
-tile.bonusblocks.flower.silver.name=White Dandelion Flower
-tile.bonusblocks.flower.silver.desc=A beautiful silver flower.
-tile.bonusblocks.flower.orange.name=Gladiola Flower
-tile.bonusblocks.flower.orange.desc=A beautiful orange flower.
-tile.bonusblocks.flower.lightblue.name=Pansy Flower
-tile.bonusblocks.flower.lightblue.desc=A beautiful light blue flower.
-tile.bonusblocks.flower.magenta.name=Hyacinth Flower
-tile.bonusblocks.flower.magenta.desc=A beautiful magenta flower.
-
-
-tile.bonusblocks.petal.red.name=Rose Petals
-tile.bonusblocks.petal.red.desc=Petals from roses.
-tile.bonusblocks.petal.yellow.name=Dandelion Petals
-tile.bonusblocks.petal.yellow.desc=Petals from dandelions.
-tile.bonusblocks.petal.lime.name=Clover Petals
-tile.bonusblocks.petal.lime.desc=Petals from clovers.
-tile.bonusblocks.petal.purple.name=Heather Petals
-tile.bonusblocks.petal.purple.desc=Petals from heathers.
-tile.bonusblocks.petal.cyan.name=Bluebell Petals
-tile.bonusblocks.petal.cyan.desc=Petals from bluebells.
-tile.bonusblocks.petal.pink.name=Orchid Petals
-tile.bonusblocks.petal.pink.desc=Petals from orchids.
-tile.bonusblocks.petal.silver.name=White Dandelion Petals
-tile.bonusblocks.petal.silver.desc=Petals from white dandelions.
-tile.bonusblocks.petal.orange.name=Gladiola Petals
-tile.bonusblocks.petal.orange.desc=Petals from gladiolas.
-tile.bonusblocks.petal.lightblue.name=Pansy Petals
-tile.bonusblocks.petal.lightblue.desc=Petals from pansies.
-tile.bonusblocks.petal.magenta.name=Hyacinth Petals
-tile.bonusblocks.petal.magenta.desc=Petals from hyacinths.
-
-tile.bonusblocks.layer.petal.red.name=Rose Petal Bed
-tile.bonusblocks.layer.petal.red.desc=A flower bed made from roses.
-tile.bonusblocks.layer.petal.yellow.name=Dandelion Petal Bed
-tile.bonusblocks.layer.petal.yellow.desc=A flower bed made from dandelions.
-tile.bonusblocks.layer.petal.lime.name=Clover Petal Bed
-tile.bonusblocks.layer.petal.lime.desc=A flower bed made from clovers.
-tile.bonusblocks.layer.petal.purple.name=Heather Petal Bed
-tile.bonusblocks.layer.petal.purple.desc=A flower bed made from heathers.
-tile.bonusblocks.layer.petal.cyan.name=Bluebell Petal Bed
-tile.bonusblocks.layer.petal.cyan.desc=A flower bed made from bluebells.
-tile.bonusblocks.layer.petal.pink.name=Orchid Petal Bed
-tile.bonusblocks.layer.petal.pink.desc=A flower bed made from orchids.
-tile.bonusblocks.layer.petal.silver.name=White Dandelion Petal Bed
-tile.bonusblocks.layer.petal.silver.desc=A flower bed made from white dandelions.
-tile.bonusblocks.layer.petal.orange.name=Gladiola Petal Bed
-tile.bonusblocks.layer.petal.orange.desc=A flower bed made from gladiolas.
-tile.bonusblocks.layer.petal.lightblue.name=Pansy Petal Bed
-tile.bonusblocks.layer.petal.lightblue.desc=A flower bed made from pansies.
-tile.bonusblocks.layer.petal.magenta.name=Hyacinth Petal Bed
-tile.bonusblocks.layer.petal.magenta.desc=A flower bed made from hyacinths.
-
 tile.bonusblocks.mushroom.gray.name=Gray Mushroom
 tile.bonusblocks.mushroom.gray.desc=A nasty gray mushroom. Good for dye.
 
