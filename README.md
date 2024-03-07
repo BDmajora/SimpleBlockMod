@@ -14,10 +14,6 @@
   + Maple Leaves
   + Jacaranda Leaves
   + Mossy Oak Leaves
-* 3 Saplings
-  + Maple Sapling
-  + Jacaranda Sapling
-  + Mossy Oak Sapling
 * 5 Logs
   + Shrub Log
   + Cacao Log

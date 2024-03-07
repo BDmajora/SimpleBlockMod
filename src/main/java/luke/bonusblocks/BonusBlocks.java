@@ -114,56 +114,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new BlockBranch("branch", blockID++, Material.leaves));
 
-    public static final Block leavesOakMossy = leaves
-            .setBlockColor(new BlockColorLeavesOak())
-            .setSideTextures("mossyleaves.png")
-            .setBottomTexture("mossyleavesfast.png")
-            .setTopBottomTexture("mossyleaves.png")
-            .build(new BlockLeavesBase("leaves.oak.mossy", blockID++, Material.leaves, true) {
-                @Override
-                protected Block getSapling() {
-                    return BonusBlocks.saplingOakMossy;
-                }
-            });
-    public static final Block leavesMaple = leaves
-            .setSideTextures("mapleleaves.png")
-            .setBottomTexture("mapleleavesfast.png")
-            .setTopBottomTexture("mapleleaves.png")
-            .build(new BlockLeavesBase("leaves.maple", blockID++, Material.leaves, true) {
-                @Override
-                protected Block getSapling() {
-                    return BonusBlocks.saplingMaple;
-                }
-            });
-    public static final Block leavesJacaranda = leaves
-            .setSideTextures("jacaleaves.png")
-            .setBottomTexture("jacaleavesfast.png")
-            .setTopBottomTexture("jacaleaves.png")
-            .build(new BlockLeavesBase("leaves.jacaranda", blockID++, Material.leaves, true) {
-                @Override
-                protected Block getSapling() {
-                    return BonusBlocks.saplingJacaranda;
-                }
-            });
-
-    // Saplings
-    public static final BlockBuilder sapling = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
-
-    public static final Block saplingMaple = sapling
-            .setTextures("maplesapling.png")
-            .build(new BlockSaplingMaple("sapling.maple", blockID++));
-    public static final Block saplingJacaranda = sapling
-            .setTextures("jacasapling.png")
-            .build(new BlockSaplingJacaranda("sapling.jacaranda", blockID++));
-    public static final Block saplingOakMossy = sapling
-            .setTextures("mossyoaksapling.png")
-            .build(new BlockSaplingMossyOak("sapling.oak.mossy", blockID++));
-
     // Logs
     public static final BlockBuilder log = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -1276,8 +1226,6 @@ public static final Block slabPermafrostPolished = slab
         Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
         Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
 
-
-        stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
         stoneToMossMap.put(BonusBlocks.cobblednetherrack, Block.netherrack);
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
@@ -1347,9 +1295,6 @@ public static final Block slabPermafrostPolished = slab
 //        LookupFuelFurnace.instance.addFuelEntry(crateSticky.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
-        LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
-        LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 10);
     }
 
     public void onRecipesReady() {
@@ -1488,10 +1433,6 @@ public static final Block slabPermafrostPolished = slab
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logShrub.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logJacaranda.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logCacao.getDefaultStack());
-
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesOakMossy.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesMaple.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
 
         Registries.ITEM_GROUPS.getItem("minecraft:stones").add(BonusBlocks.netherrack.getDefaultStack());
 

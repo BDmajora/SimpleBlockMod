@@ -47,10 +47,6 @@ public class BonusRecipesRegister implements RecipeEntrypoint {
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkPine.getDefaultStack());
 */
 
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesMaple.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesOakMossy.getDefaultStack());
-
         DataLoader.loadRecipes("/assets/bonusblocks/recipes/workbench.json");
         DataLoader.loadRecipes("/assets/bonusblocks/recipes/furnace.json");
     }
