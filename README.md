@@ -77,19 +77,9 @@
   + Crafted in the same way as other carved stone blocks
 * Baked Clay
   + Made from smelting a clay block
-* Quartz Glass
-  + Reflects light that goes through
-  + Crafted with 2 glass and 2 quartz
 * Netherrack and Cobbled Netherrack
   + Variants of Mossy Cobbled Netherrack *
   + Generate in the nether everywhere
-* 6 New bricks
-  + Olivine
-  + Quartz
-  + Steel
-  + Baked Mud
-  + Scorchedstone
-  + Netherrack
 * Soul Slate
   + Generates in the bottom half of the nether
   + Crafted from 4 soulsand

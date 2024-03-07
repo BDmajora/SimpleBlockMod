@@ -903,19 +903,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("bakedclay.png")
             .build(new Block("clay.baked", blockID++, Material.stone));
 
-    // Quartz Glass
-    public static final Block glassQuartz = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-            .setHardness(0.3F)
-            .setResistance(0.3F)
-            .setLightOpacity(-1)
-            .setVisualUpdateOnMetadata()
-            .setUseInternalLight()
-            .setTextures("quartzglass.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockGlassQuartz("glass.quartz", blockID++, Material.glass, false));
-
-
     // Bricks
     public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
@@ -969,10 +956,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setResistance(4000.0f)
             .setTextures("steelbrick.png")
             .build(new Block("brick.steel", blockID++, Material.metal));
-    public static final Block brickQuartz = brick
-            .setHardness(3.0f)
-            .setTextures("quartzbrick.png")
-            .build(new Block("brick.quartz", blockID++, Material.stone));
     public static final Block brickOlivine = brick
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
@@ -1137,10 +1120,6 @@ public static final Block slabPermafrostPolished = slab
             .setResistance(4000.0f)
             .setTextures("steelbrick.png")
             .build(new BlockSlab(brickSteel, blockID++));
-    public static final Block slabBrickQuartz = slab
-            .setHardness(3.0f)
-            .setTextures("quartzbrick.png")
-            .build(new BlockSlab(brickQuartz, blockID++));
     public static final Block slabBrickOlivine = slab
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
@@ -1259,10 +1238,6 @@ public static final Block slabPermafrostPolished = slab
             .setResistance(4000.0f)
             .setTextures("steelbrick.png")
             .build(new BlockStairs(brickSteel, blockID++));
-    public static final Block stairsBrickQuartz = stairs
-            .setHardness(3.0f)
-            .setTextures("quartzbrick.png")
-            .build(new BlockStairs(brickQuartz, blockID++));
     public static final Block stairsBrickOlivine = stairs
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
@@ -1443,11 +1418,6 @@ public static final Block slabPermafrostPolished = slab
                 .addInput('S', Item.leather)
                 .create("block_of_wicker", new ItemStack(BonusBlocks.blockWicker, 4));
 
-        RecipeBuilder.Shaped(MOD_ID, "GQ", "QG")
-                .addInput('G', Block.glass)
-                .addInput('Q', Item.quartz)
-                .create("glass_quartz", new ItemStack(BonusBlocks.glassQuartz, 4));
-
         RecipeBuilder.Shaped(MOD_ID, "CIC")
                 .addInput('C', BonusBlocks.blockCopper)
                 .addInput('I', BonusBlocks.ingotCopper)
@@ -1481,7 +1451,6 @@ public static final Block slabPermafrostPolished = slab
         templateBricks.addInput('X', BonusBlocks.scorchedstone).create("scorched_bricks", new ItemStack(BonusBlocks.brickScorchedstone, 4));
         templateBricks.addInput('X', Block.mudBaked).create("mud_bricks", new ItemStack(BonusBlocks.brickMud, 4));
         templateBricks.addInput('X', Item.ingotSteel).create("steel_bricks", new ItemStack(BonusBlocks.brickSteel, 4));
-        templateBricks.addInput('X', Item.quartz).create("quartz_bricks", new ItemStack(BonusBlocks.brickQuartz, 4));
         templateBricks.addInput('X', Item.olivine).create("olivine_bricks", new ItemStack(BonusBlocks.brickOlivine, 4));
         templateBricks.addInput('X', Block.soulsand).create("soulslate", new ItemStack(BonusBlocks.soulslate, 4));
 
@@ -1500,17 +1469,11 @@ public static final Block slabPermafrostPolished = slab
 
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
-        RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_granite_to_quartz");
 
         RecipeBuilder.Shapeless(MOD_ID)
                 .addInput(new ItemStack(Item.dye, 1, 2))
                 .addInput(new ItemStack(Item.dye, 1, 11))
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Item.dye, 2, 10));
-
-        RecipeBuilder.Shaped(MOD_ID, "PX", "XP")
-                .addInput('P', (Item.ammoPebble))
-                .addInput('X', (Item.quartz))
-                .create("pebbles_to_granite", new ItemStack(Block.granite, 2));
 
         RecipeBuilder.Shaped(MOD_ID, "WWW", "PPP")
                 .addInput('P',("minecraft:planks"))
@@ -1673,7 +1636,6 @@ public static final Block slabPermafrostPolished = slab
         templateSlab.addInput('X', Block.brickStonePolishedMossy).create("stone_polished_mossy_brick_slab", new ItemStack(BonusBlocks.slabBrickStonePolishedMossy, 6));
         templateSlab.addInput('X', BonusBlocks.brickScorchedstone).create("scorchedstone_brick_slab", new ItemStack(BonusBlocks.slabBrickScorchedstone, 6));
         templateSlab.addInput('X', BonusBlocks.brickSteel).create("steel_brick_slab", new ItemStack(BonusBlocks.slabBrickSteel, 6));
-        templateSlab.addInput('X', BonusBlocks.brickQuartz).create("quartz_brick_slab", new ItemStack(BonusBlocks.slabBrickQuartz, 6));
         templateSlab.addInput('X', BonusBlocks.brickOlivine).create("olivine_brick_slab", new ItemStack(BonusBlocks.slabBrickOlivine, 6));
         templateSlab.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_slab", new ItemStack(BonusBlocks.slabCobblePermafrost, 6));
         templateSlab.addInput('X', BonusBlocks.scorchedstone).create("scorchedstone_slab", new ItemStack(BonusBlocks.slabScorchedstone, 6));
@@ -1693,7 +1655,6 @@ public static final Block slabPermafrostPolished = slab
         templateStairs.addInput('X', Block.brickStonePolishedMossy).create("stone_polished_mossy_brick_stairs", new ItemStack(BonusBlocks.stairsBrickStonePolishedMossy, 6));
         templateStairs.addInput('X', BonusBlocks.brickScorchedstone).create("scorchedstone_brick_stairs", new ItemStack(BonusBlocks.stairsBrickScorchedstone, 6));
         templateStairs.addInput('X', BonusBlocks.brickSteel).create("steel_brick_stairs", new ItemStack(BonusBlocks.stairsBrickSteel, 6));
-        templateStairs.addInput('X', BonusBlocks.brickQuartz).create("quartz_brick_stairs", new ItemStack(BonusBlocks.stairsBrickQuartz, 6));
         templateStairs.addInput('X', BonusBlocks.brickOlivine).create("olivine_brick_stairs", new ItemStack(BonusBlocks.stairsBrickOlivine, 6));
         templateStairs.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_stairs", new ItemStack(BonusBlocks.stairsCobblePermafrost, 6));
         templateStairs.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_stairs", new ItemStack(BonusBlocks.stairsCobblestoneMossy, 6));
@@ -1785,10 +1746,6 @@ public static final Block slabPermafrostPolished = slab
                 .create("basalt_to_olivine", Item.olivine.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(Block.granite)
-                .create("granite_to_quartz", Item.quartz.getDefaultStack());
-
-        RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(BonusBlocks.netherrack)
                 .create("netherrack_to_brimstone", BonusBlocks.brimstone.getDefaultStack());
 
@@ -1817,7 +1774,6 @@ public static final Block slabPermafrostPolished = slab
         addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
         addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
         addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
-        addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
         addBorder(ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
     }
 }
