@@ -125,7 +125,6 @@
 * Netherrack has been renamed to Mossy Cobbled Netherrack
 * Multiple items and blocks have been given new names to adress issues and fix bugs
 * All flowers spawn in specific biomes now, so no more red and yellow ones everywhere
-* Bed recipe has been changed to use only wool now (Will make more sense when sleeping bags are fully added)
 * Pebbles now generate all over the world
 * Some recipes missing have been fixed
 * Cobbled Stone recipes in the blast furnace now use the stone instead of cobble

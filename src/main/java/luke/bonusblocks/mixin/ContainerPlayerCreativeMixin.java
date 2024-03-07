@@ -33,14 +33,5 @@ public abstract class ContainerPlayerCreativeMixin {
         creativeItems.add(new ItemStack(Block.blocksList[Block.basaltCarved.id]));
         creativeItemsCount++;
 
-        for (int metadata2 = 0b0000; metadata2 < 0b100000000; metadata2 += 0b00010000) {
-            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.slabWool.id], 1, metadata2));
-            creativeItemsCount++;
-        }
-
-        for (int metadata3 = 0b0000; metadata3 < 0b100000000; metadata3 += 0b00010000) {
-            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.stairsWool.id], 1, metadata3));
-            creativeItemsCount++;
-        }
     }
 }

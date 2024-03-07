@@ -1026,14 +1026,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .setItemBlock(ItemBlockSlab::new)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block slabWool = slab
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setHardness(0.8F)
-            .setResistance(0.8F)
-            .setItemBlock(ItemBlockSlabPainted::new)
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockWoolSlab(Block.wool, blockID++));
     public static final Block slabCobblestoneMossy = slab
             .setHardness(2.0F)
             .setTextures(4, 2)
@@ -1177,14 +1169,6 @@ public static final Block slabPermafrostPolished = slab
             .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block stairsWool = stairs
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setHardness(0.8F)
-            .setResistance(0.8F)
-            .setItemBlock(ItemBlockStairsPainted::new)
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockWoolStairs(Block.wool, blockID++));
     public static final Block stairsCobblestoneMossy = stairs
             .setHardness(2.0F)
             .setTextures(4, 2)
@@ -1475,11 +1459,6 @@ public static final Block slabPermafrostPolished = slab
                 .addInput(new ItemStack(Item.dye, 1, 11))
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Item.dye, 2, 10));
 
-        RecipeBuilder.Shaped(MOD_ID, "WWW", "PPP")
-                .addInput('P',("minecraft:planks"))
-                .addInput('W', ("minecraft:wools"))
-                .create("bed", new ItemStack(Item.bed, 1));
-
 //        RecipeBuilder.Shaped(MOD_ID, "WWW")
 //                .addInput('W', (Item.cloth))
 //                .create("sleepingbag", new ItemStack(BonusBlocks.bedrollItem, 1));
@@ -1534,61 +1513,6 @@ public static final Block slabPermafrostPolished = slab
 //                BonusBlocks.barkPine,
 //                BonusBlocks.barkScorched,
 //                BonusBlocks.barkShrub));
-
-        Registries.ITEM_GROUPS.register("bonusblocks:wool_slab", Registries.stackListOf(new ItemStack(BonusBlocks.slabWool, 1, 0),
-                new ItemStack(BonusBlocks.slabWool, 1, 16),
-                new ItemStack(BonusBlocks.slabWool, 1, 32),
-                new ItemStack(BonusBlocks.slabWool, 1, 48),
-                new ItemStack(BonusBlocks.slabWool, 1, 64),
-                new ItemStack(BonusBlocks.slabWool, 1, 80),
-                new ItemStack(BonusBlocks.slabWool, 1, 96),
-                new ItemStack(BonusBlocks.slabWool, 1, 112),
-                new ItemStack(BonusBlocks.slabWool, 1, 128),
-                new ItemStack(BonusBlocks.slabWool, 1, 144),
-                new ItemStack(BonusBlocks.slabWool, 1, 160),
-                new ItemStack(BonusBlocks.slabWool, 1, 176),
-                new ItemStack(BonusBlocks.slabWool, 1, 192),
-                new ItemStack(BonusBlocks.slabWool, 1, 208),
-                new ItemStack(BonusBlocks.slabWool, 1, 224),
-                new ItemStack(BonusBlocks.slabWool, 1, 240)));
-
-        Registries.ITEM_GROUPS.register("bonusblocks:wool_stairs", Registries.stackListOf(new ItemStack(BonusBlocks.stairsWool, 1, 0),
-                new ItemStack(BonusBlocks.stairsWool, 1, 16),
-                new ItemStack(BonusBlocks.stairsWool, 1, 32),
-                new ItemStack(BonusBlocks.stairsWool, 1, 48),
-                new ItemStack(BonusBlocks.stairsWool, 1, 64),
-                new ItemStack(BonusBlocks.stairsWool, 1, 80),
-                new ItemStack(BonusBlocks.stairsWool, 1, 96),
-                new ItemStack(BonusBlocks.stairsWool, 1, 112),
-                new ItemStack(BonusBlocks.stairsWool, 1, 128),
-                new ItemStack(BonusBlocks.stairsWool, 1, 144),
-                new ItemStack(BonusBlocks.stairsWool, 1, 160),
-                new ItemStack(BonusBlocks.stairsWool, 1, 176),
-                new ItemStack(BonusBlocks.stairsWool, 1, 192),
-                new ItemStack(BonusBlocks.stairsWool, 1, 208),
-                new ItemStack(BonusBlocks.stairsWool, 1, 224),
-                new ItemStack(BonusBlocks.stairsWool, 1, 240)));
-
-        for (int color = 0; color < 16; color++) {
-            RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:wool_slab")
-                    .addInput(new ItemStack(Item.dye, 1, 15 - color))
-                    .create("wool_slab_dye", new ItemStack(BonusBlocks.slabWool, 1, color << 4));
-
-            RecipeBuilder.Shaped(MOD_ID, "CCC", "CCC")
-                    .addInput('C', new ItemStack(Block.wool, 1, color))
-                    .create("wool_slab", new ItemStack(BonusBlocks.slabWool, 6, color << 4));
-        }
-        for (int color = 0; color < 16; color++) {
-            RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:wool_stairs")
-                    .addInput(new ItemStack(Item.dye, 1, 15 - color))
-                    .create("wool_stairs_dye", new ItemStack(BonusBlocks.stairsWool, 1, color << 4));
-
-            RecipeBuilder.Shaped(MOD_ID, "C  ", "CC ", "CCC")
-                    .addInput('C', new ItemStack(Block.wool, 1, color))
-                    .create("wool_stairs", new ItemStack(BonusBlocks.stairsWool, 6, color << 4));
-        }
 
             RecipeBuilder.Shaped(MOD_ID, "PPP", "   ", "PPP")
                     .addInput('P', ("minecraft:planks"))
