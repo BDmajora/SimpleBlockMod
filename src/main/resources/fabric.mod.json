@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "SimpleBlocks",
+  "id": "simpleblocks",
   "version": "0.0.0",
 
-  "name": "SimpleBlocks",
-  "description": "A fork of bonus blocks to be used as a template",
+  "name": "simpleblocks",
+  "description": "a fork of bonus blocks to be used as a template",
   "authors": [
     "LukeisStuff",
     "BDMajora"
@@ -20,18 +20,18 @@
   "environment": "*",
   "entrypoints": {
     "recipesReady": [
-      "luke.bonusblocks.BonusRecipesRegister",
-      "luke.bonusblocks.BonusBlocks"
+      "bdmajora.simpleblocks.SimpleRecipesRegister",
+      "bdmajora.simpleblocks.SimpleBlocks"
     ],
     "main": [
-      "luke.bonusblocks.BonusBlocks"
+      "bdmajora.simpleblocks.SimpleBlocks"
     ],
     "terrain-api": [
-      "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
+      "bdmajora.simpleblocks.ModContainer.TerrainApi.TerrainApiPlugin"
     ]
   },
   "mixins": [
-    "bonusblocks.mixins.json"
+    "simpleblocks.mixins.json"
   ],
 
   "depends": {
