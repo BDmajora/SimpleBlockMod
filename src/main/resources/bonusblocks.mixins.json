@@ -1,26 +1,21 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "luke.bonusblocks.mixin",
+  "package": "bdmajora.simpleblocks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BiomeProviderOverworldMixin",
-    "BiomeShrublandMixin",
     "BlockDeadBushMixin",
-    "BlockGrassMixin",
     "ChunkDecoratorOverworldMixin",
     "ContainerPlayerCreativeMixin",
     "EntityMixin",
     "EntityPaintingMixin",
     "EntityTrackerAccessor",
     "ItemDyeMixin",
-    "ItemToolShovelMixin",
     "NetClientHandlerMixin",
     "PaintingPacketMixin",
     "PaintingRendererMixin",
     "RenderBlocksMixin",
-    "SurfaceGeneratorOverworldMixin",
-    "WorldFeatureLabyrinthMixin"
+    "SurfaceGeneratorOverworldMixin"
   ],
   "client": [
   ],

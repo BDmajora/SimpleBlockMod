@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "bonusblocks",
-  "version": "2.0.0",
+  "id": "SimpleBlocks",
+  "version": "0.0.0",
 
-  "name": "Bonus Blocks",
-  "description": "Adds in a plethora of new and useful blocks",
+  "name": "SimpleBlocks",
+  "description": "A fork of bonus blocks to be used as a template",
   "authors": [
-    "LukeisStuff"
+    "LukeisStuff",
+    "BDMajora"
   ],
   "icon": "icon.png",
   "contact": {

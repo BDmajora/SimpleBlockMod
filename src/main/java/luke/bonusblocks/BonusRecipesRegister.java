@@ -29,12 +29,6 @@ public class BonusRecipesRegister implements RecipeEntrypoint {
 
         Registries.RECIPES.register("bonusblocks", BONUSBLOCKS);
 
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logCacao.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logJacaranda.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logShrub.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
-
 /*
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkJacaranda.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkScorched.getDefaultStack());

@@ -31,15 +31,5 @@ public abstract class SurfaceGeneratorOverworldMixin {
         Random rand = new Random((long) chunkX * 341873128712L + (long) chunkZ * 132897987541L);
         Biome biome = new Biome();
 
-        if (currentLayerDepth == 0) {
-            if (biome.equals(Biomes.OVERWORLD_OUTBACK) && fillerBlock == Block.dirtScorched.id) {
-                currentLayerDepth = rand.nextInt(8) + 2;
-                fillerBlock = (short) BonusBlocks.scorchedstone.id;
-            } else if (biome.equals(Biomes.OVERWORLD_OUTBACK_GRASSY) && fillerBlock == Block.dirtScorched.id) {
-                currentLayerDepth = rand.nextInt(8) + 2;
-                fillerBlock = (short) BonusBlocks.scorchedstone.id;
-            }
-            ci.cancel();
-        }
     }
 }
